@@ -1,0 +1,492 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>我的编程规范/习惯（持续更新中……） | JloveU&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="yuqiang">
+    
+    <meta name="description" content="本文记录本人在编程过程中总结的、供自己参考的一些编程规范（主要是C和C++）。其中也包括很多从书籍或者网上获得的规范、技巧等。仅供本人自己参考！并不具有强制意义！">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple_icon.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple_icon.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JloveU&#39;s Blog" title="JloveU&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JloveU&#39;s Blog">JloveU&#39;s Blog</a></h1>
+				<h2 class="blog-motto">我要一步一步往上爬！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jloveu.github.io/">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <!-- 说明：本文件是定义网页整体布局。 ——于强 2014-07-25 -->
+<div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/08/25/20140825-my_programming_specification/" title="我的编程规范/习惯（持续更新中……）" itemprop="url">我的编程规范/习惯（持续更新中……）</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://jloveu.github.io/" title="yuqiang">yuqiang</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-08-25T00:00:00.000Z" itemprop="datePublished">8月 25 2014</time>
+    更新日期:<time datetime="2014-08-24T17:58:06.000Z" itemprop="dateModified">8月 25 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我的编程规范/习惯"><span class="toc-number">1.</span> <span class="toc-text">我的编程规范/习惯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、功能方面："><span class="toc-number">1.1.</span> <span class="toc-text">一、功能方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_标识符命名(变量、函数等)"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 标识符命名(变量、函数等)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_函数返回值(状态，错误代码等)"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 函数返回值(状态，错误代码等)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_main函数输入参数处理"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. main函数输入参数处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_动态内存分配与释放"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 动态内存分配与释放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_控制台输出"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 控制台输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、美观方面："><span class="toc-number">1.2.</span> <span class="toc-text">二、美观方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_大括号_{_}"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 大括号 { }</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_注释"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_空行"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 空行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_缩进与对齐"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 缩进与对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_表达式中的空格"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 表达式中的空格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、技巧方面："><span class="toc-number">1.3.</span> <span class="toc-text">三、技巧方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_提高循环效率"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 提高循环效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_巧用数组0号元素"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 巧用数组0号元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_冒泡排序结束条件"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 冒泡排序结束条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_字符串数组结束标志"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 字符串数组结束标志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_循环变量数据类型"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 循环变量数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-_枚举类型"><span class="toc-number">1.3.6.</span> <span class="toc-text">6. 枚举类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-_二进制文件和文本文件"><span class="toc-number">1.3.7.</span> <span class="toc-text">7. 二进制文件和文本文件</span></a></li></ol></li></ol></li></ol>
+		</div>
+		
+		<p>本文记录本人在编程过程中总结的、供自己参考的一些编程规范（主要是C和C++）。<br>其中也包括很多从书籍或者网上获得的规范、技巧等。<br>仅供本人自己参考！并不具有强制意义！</p>
+<a id="more"></a>
+
+
+<h1 id="我的编程规范/习惯">我的编程规范/习惯</h1>
+<hr>
+<h2 id="一、功能方面："><font color="#FF00FF">一、功能方面：</font></h2>
+<h3 id="1-_标识符命名(变量、函数等)">1. 标识符命名(变量、函数等)</h3>
+<ul>
+<li><p>一律采用大小写分割单词，而不是下划线；</p>
+</li>
+<li><p>局部变量名和函数名：<br>除第一个单词之外其余单词首字母大写，如：<br>局部变量名 <code>userName</code><br>函数名 <code>getUserName</code>；</p>
+</li>
+<li><p>类中的成员变量名：<br>每个单词首字母均大写，并在最前面加一个小写 <code>m</code>，如 <code>mListView</code>；</p>
+</li>
+</ul>
+<h3 id="2-_函数返回值(状态，错误代码等)">2. 函数返回值(状态，错误代码等)</h3>
+<ul>
+<li><p>如果只是一个独立的过程调用，如输出帮助信息，则不必设置返回值，将返回值类型设为 <code>void</code>；</p>
+</li>
+<li><p>除上一条之外，如果没有需要返回的有意义的参数，则默认返回函数运行状态，即，函数执行成功返回0，不成功返回1；</p>
+</li>
+</ul>
+<h3 id="3-_main函数输入参数处理">3. main函数输入参数处理</h3>
+<ul>
+<li><p>操作选项：<br>除第一个单词之外首字母大写，如果操作选项后有相应的参数，则在操作选项前面加一个 <code>/</code>，如 <code>/r</code>；</p>
+</li>
+<li><p>在每个操作选项后可能会有数值参数；</p>
+</li>
+<li><p>在main函数中判断输入命令时，将所有可能的输入参数事先写在一个数组里，方便判断逻辑；</p>
+</li>
+</ul>
+<h3 id="4-_动态内存分配与释放">4. 动态内存分配与释放</h3>
+<ul>
+<li>每次释放内存之后紧跟着要将对应指针置为 <code>NULL</code>；</li>
+</ul>
+<h3 id="5-_控制台输出">5. 控制台输出</h3>
+<ul>
+<li>关于命令行参数的使用说明等信息单独写成一个函数；</li>
+</ul>
+<h2 id="二、美观方面："><font color="#FF00FF">二、美观方面：</font></h2>
+<h3 id="1-_大括号_{_}">1. 大括号 { }</h3>
+<ul>
+<li><p>所有用于语句块控制的大括号都置于单独一行；</p>
+</li>
+<li><p><code>if</code>、<code>for</code>、<code>while</code> 等语句的执行语句部分无论多少都要加大括号；</p>
+</li>
+<li><p>定义数组的大括号，如果是一维数组且数组元素不多，则 <code>{</code> 和 <code>}</code> 放在同一行，否则，<code>{</code> 和等号放在同一行，<code>}</code> 放在单独一行，且与 <code>{</code> 对齐；</p>
+</li>
+</ul>
+<h3 id="2-_注释">2. 注释</h3>
+<ul>
+<li><p>每个函数体前面要有一行 <code>//</code> 开头的注释，说明该函数的作用，输入输出参数的意义等；</p>
+</li>
+<li><p>语句块注释：<br>紧挨着放在语句块的上面，单独一行，用 <code>//</code>开头；</p>
+</li>
+<li><p>单句的注释：<br>放在需注释的代码后面，用 <code>//</code> 开头，<code>//</code> 前面加一个空格。如需对齐，则插入用空格代替的制表符；</p>
+</li>
+</ul>
+<h3 id="3-_空行">3. 空行</h3>
+<ul>
+<li><p>两个函数体之间要有两个空行；</p>
+</li>
+<li><p>每个有独立意义或功能的语句块，上下要有一个空行，且最好在上面有一行注释；</p>
+</li>
+<li><p>变量说明之后要加一个空行；</p>
+</li>
+</ul>
+<h3 id="4-_缩进与对齐">4. 缩进与对齐</h3>
+<ul>
+<li><p>语句前面的缩进可以用制表符(Tab)，或者在编辑器中设置成将 Tab 自动转换为4个空格，暂且规定使用后者；</p>
+</li>
+<li><p>行后的注释如需对齐，只能用上面的后者，或者手打空格；</p>
+</li>
+<li><p>多行相似语句之间尽可能利用空格对齐，如：</p>
+  <figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">timeStart = time(<span class="number">0</span>);</div><div class="line">timeEnd   = time(<span class="number">0</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>较长的语句（&gt;80字符）要分成多行书写，长表达式要在低优先级操作符处划分新行，操作符放在新行之首，划分出的新行要进行适当的缩进，暂且规定缩进8个空格。如：</p>
+  <figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">strcmp</span>(strName, <span class="string">"yuqiang"</span>) == <span class="number">0</span> || <span class="built_in">strcmp</span>(strName, <span class="string">"fangyu"</span>) == <span class="number">0</span></div><div class="line">        || <span class="built_in">strcmp</span>(strName, <span class="string">"fangyuqiang"</span>) == <span class="number">0</span>)</div><div class="line">{</div><div class="line">    <span class="comment">//do something</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-_表达式中的空格">5. 表达式中的空格</h3>
+<h2 id="三、技巧方面："><font color="#FF00FF">三、技巧方面：</font></h2>
+<h3 id="1-_提高循环效率">1. 提高循环效率</h3>
+<p><em>记录时间：2014-08-16</em><br><em>参考：严蔚敏，吴伟民，《数据结构(C语言版)》，清华大学出版社，P217。</em></p>
+<p><code>for</code> 循环的循环变量 <code>i</code>，可以通过递减的方式提高执行效率。比如 <code>i</code> 从 <code>0</code> 到 <code>strlen(str)</code>，如果写成如下形式</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;<span class="built_in">strlen</span>(str); i++)</div></pre></td></tr></table></figure>
+
+<p>每次需执行 <code>strlen(str)</code> 函数，而如果改成下面这种写法</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(i=<span class="built_in">strlen</span>(str); i&gt;<span class="number">0</span>; i--)</div></pre></td></tr></table></figure>
+
+<p>则只需执行一次 <code>strlen(str)</code> 函数！</p>
+<p>上网搜了一下，C标准库中的 <code>strlen</code> 函数的效率非常高，基本不用考虑效率问题，但是其他情况就应该考虑了，但是还是没有证明 <code>for</code> 循环在编译的时候会变成什么样，有待考究……</p>
+<h3 id="2-_巧用数组0号元素">2. 巧用数组0号元素</h3>
+<p><em>记录时间：2014-08-18</em><br><em>参考：严蔚敏，吴伟民，《数据结构(C语言版)》，清华大学出版社，P216，272。</em></p>
+<p>数组的第0个位置可用作哨兵，或临时存储单元！可以在循环中利用！</p>
+<h3 id="3-_冒泡排序结束条件">3. 冒泡排序结束条件</h3>
+<p><em>记录时间：2014-08-18</em><br><em>参考：严蔚敏，吴伟民，《数据结构(C语言版)》，清华大学出版社，P273。</em></p>
+<p>判别冒泡排序法结束的条件应该是“在一趟排序过程中没有进行过交换记录的操作”！以前没有注意到这一点，一直以为一定要进行 <code>n-1</code> 趟排序。</p>
+<h3 id="4-_字符串数组结束标志">4. 字符串数组结束标志</h3>
+<p><em>记录时间：2014-08-23</em><br><em>参考：周纯杰，《标准C语言程序设计及应用》，P161，P165。</em></p>
+<p>字符串数组最后可以加一个空字符串，作为循环结束的标志使用。</p>
+<h3 id="5-_循环变量数据类型">5. 循环变量数据类型</h3>
+<p><em>记录时间：2014-08-23</em><br><em>参考：周纯杰，《标准C语言程序设计及应用》，P255。</em></p>
+<p>可以用 <code>typedef</code> 将 <code>int</code> 或 <code>unsigned int</code> 重定义为 <code>COUNTER</code> 类型，然后将循环变量（如：<code>i</code>、<code>j</code> 等）定义为 <code>COUNTER</code> 类型，以便于理解。<br>另外，在 <code>stdio.h</code> 头文件中有如下定义：</p>
+<figure class="highlight C"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> size_t;</div></pre></td></tr></table></figure>
+
+<h3 id="6-_枚举类型">6. 枚举类型</h3>
+<p><em>记录时间：2014-08-23</em><br><em>参考：周纯杰，《标准C语言程序设计及应用》，P257。</em></p>
+<p>善用枚举类型。</p>
+<h3 id="7-_二进制文件和文本文件">7. 二进制文件和文本文件</h3>
+<p><em>记录时间：2014-08-23</em><br><em>参考：周纯杰，《标准C语言程序设计及应用》，P267。</em>  </p>
+<p>用于保存和重新装入程序内部数据的文件最好用二进制文件，可以节省外存空间和转换时间，在保存或装入大批数据时有速度优势，但不适合阅读。</p>
+<p><br><br>待补充……</p>
+<p><a href="#"><br><img src="/images/icons/gotoTOP_1_small.png" alt="回顶部"><br></a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/原创/">原创</a><a href="/tags/编程规范/">编程规范</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/编程开发/">编程开发</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://jloveu.github.io/2014/08/25/20140825-my_programming_specification/" data-title="我的编程规范/习惯（持续更新中……） | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/08/06/20140806-2012hua_ke_kong_zhi_xi_zi_dong_hua_bao_yan_bi_shi/"  title="【转】2012华科控制系自动化保研笔试">
+ <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+ <span>【转】2012华科控制系自动化保研笔试
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014/08/25/20140825-my_programming_specification/" data-title="我的编程规范/习惯（持续更新中……）" data-url=""></div>
+<!-- 多说评论框 end -->
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我的编程规范/习惯"><span class="toc-number">1.</span> <span class="toc-text">我的编程规范/习惯</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、功能方面："><span class="toc-number">1.1.</span> <span class="toc-text">一、功能方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_标识符命名(变量、函数等)"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 标识符命名(变量、函数等)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_函数返回值(状态，错误代码等)"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 函数返回值(状态，错误代码等)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_main函数输入参数处理"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. main函数输入参数处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_动态内存分配与释放"><span class="toc-number">1.1.4.</span> <span class="toc-text">4. 动态内存分配与释放</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_控制台输出"><span class="toc-number">1.1.5.</span> <span class="toc-text">5. 控制台输出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、美观方面："><span class="toc-number">1.2.</span> <span class="toc-text">二、美观方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_大括号_{_}"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 大括号 { }</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_注释"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_空行"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 空行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_缩进与对齐"><span class="toc-number">1.2.4.</span> <span class="toc-text">4. 缩进与对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_表达式中的空格"><span class="toc-number">1.2.5.</span> <span class="toc-text">5. 表达式中的空格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、技巧方面："><span class="toc-number">1.3.</span> <span class="toc-text">三、技巧方面：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_提高循环效率"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 提高循环效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_巧用数组0号元素"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 巧用数组0号元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-_冒泡排序结束条件"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 冒泡排序结束条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-_字符串数组结束标志"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 字符串数组结束标志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-_循环变量数据类型"><span class="toc-number">1.3.5.</span> <span class="toc-text">5. 循环变量数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-_枚举类型"><span class="toc-number">1.3.6.</span> <span class="toc-text">6. 枚举类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-_二进制文件和文本文件"><span class="toc-number">1.3.7.</span> <span class="toc-text">7. 二进制文件和文本文件</span></a></li></ol></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/保研考研/" title="保研考研">保研考研<sup>6</sup></a></li>
+		
+			<li><a href="/categories/编程开发/" title="编程开发">编程开发<sup>3</sup></a></li>
+		
+			<li><a href="/categories/茶余饭后/" title="茶余饭后">茶余饭后<sup>1</sup></a></li>
+		
+			<li><a href="/categories/阅读记录/" title="阅读记录">阅读记录<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>2</sup></a></li>
+		
+			<li><a href="/tags/保研/" title="保研">保研<sup>5</sup></a></li>
+		
+			<li><a href="/tags/原创/" title="原创">原创<sup>5</sup></a></li>
+		
+			<li><a href="/tags/复试/" title="复试">复试<sup>6</sup></a></li>
+		
+			<li><a href="/tags/第一桶金/" title="第一桶金">第一桶金<sup>1</sup></a></li>
+		
+			<li><a href="/tags/编程规范/" title="编程规范">编程规范<sup>1</sup></a></li>
+		
+			<li><a href="/tags/考研/" title="考研">考研<sup>1</sup></a></li>
+		
+			<li><a href="/tags/自动化/" title="自动化">自动化<sup>6</sup></a></li>
+		
+			<li><a href="/tags/计划监督者/" title="计划监督者">计划监督者<sup>1</sup></a></li>
+		
+			<li><a href="/tags/转载/" title="转载">转载<sup>7</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://jloveu.github.io/IloveUFangYu/a" target="_blank" title="Baby I love U">2014七夕情人节</a></li>
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><!-- 说明：本文件定义网页最低端的作者图片、2行作者介绍、作者各网站链接和Power by。 ——于强 2014-07-25 -->
+<div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 欢迎参观我的博客！ <br/>
+			在这里记载的，都是我学习生活的点滴记录。</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2755919507" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/JloveU" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://jloveu.github.io/" target="_blank" title="yuqiang">yuqiang</a>
+		
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe30b6f9dbaadde33318eaad49ef6e9e5' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		</p>
+
+</div>
+</footer>
+    <!-- 说明：本文件是定义网页中，紧接着文章下面到footer的那一块，包括所属分类、包含标签、社交网站分享、前后篇博文链接、多说评论等。 ——于强 2014-07-25 -->
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<!-- 这段代码是多说评论组件的js代码，其中有一句“ds.src = '//static.duoshuo.com/embed.js';”被我改成了“ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';” ——于强 2014-07-25 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jloveu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
