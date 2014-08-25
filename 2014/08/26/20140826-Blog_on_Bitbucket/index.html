@@ -4,20 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>【转】2014华科自动化学院复试笔试题目回忆版 | JloveU&#39;s Blog</title>
+    <title>用Bitbucket搭建博客初探 | JloveU&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="yuqiang">
     
-    <meta name="description" content="原文地址：http://bbs.kaoyan.com/t5173903p1 百度快照
-
-发表于 2014-3-19 10:02
-今天签协议顺利录取了，所以回报论坛，今年笔试考数电，微机原理，C语言，电路。题目如下。
-
-一、填空
-(35’=1’25+2’5，第十小题10’)
-
-补码80H,7FH的真值">
+    <meta name="description" content="本博客是搭建在GitHub上的静态博客，但是由于GitHub免费账户不能创建私有仓库，导致有些东西不想放在GitHub上。
+前两天，在免费资源部落上发现了Bitbucket，它和GitHub类似，也是一个支持Git的代码托管网站，它吸引我的地方在于，免费账户可以创建无限制个私有仓库！">
     
     
     
@@ -78,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/07/22/20140721-2014hua_ke_zi_dong_hua_xue_yuan_fu_shi_bi_shi_ti_mu_hui_yi_ban/" title="【转】2014华科自动化学院复试笔试题目回忆版" itemprop="url">【转】2014华科自动化学院复试笔试题目回忆版</a>
+      <a href="/2014/08/26/20140826-Blog_on_Bitbucket/" title="用Bitbucket搭建博客初探" itemprop="url">用Bitbucket搭建博客初探</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://jloveu.github.io/" title="yuqiang">yuqiang</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-07-21T22:56:05.000Z" itemprop="datePublished">7月 22 2014</time>
-    更新日期:<time datetime="2014-08-24T15:41:24.000Z" itemprop="dateModified">8月 24 2014</time>
+    <time datetime="2014-08-26T00:00:00.000Z" itemprop="datePublished">8月 26 2014</time>
+    更新日期:<time datetime="2014-08-25T18:45:49.000Z" itemprop="dateModified">8月 26 2014</time>
     
   </p>
 </header>
@@ -95,94 +88,89 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、填空"><span class="toc-number">1.</span> <span class="toc-text">一、填空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、选择和填空"><span class="toc-number">2.</span> <span class="toc-text">二、选择和填空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、四变量卡诺图化简"><span class="toc-number">3.</span> <span class="toc-text">三、四变量卡诺图化简</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、带一个控制端A的74161计数器"><span class="toc-number">4.</span> <span class="toc-text">四、带一个控制端A的74161计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、接口"><span class="toc-number">5.</span> <span class="toc-text">五、接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、判断题"><span class="toc-number">6.</span> <span class="toc-text">六、判断题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、填空题，写出C语言语句表达式结果"><span class="toc-number">7.</span> <span class="toc-text">七、填空题，写出C语言语句表达式结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、C语言字符串编程"><span class="toc-number">8.</span> <span class="toc-text">八、C语言字符串编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、C语言编程"><span class="toc-number">9.</span> <span class="toc-text">九、C语言编程</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、注册Bitbucket账户"><span class="toc-number">1.</span> <span class="toc-text">一、注册Bitbucket账户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、账户设置"><span class="toc-number">2.</span> <span class="toc-text">二、账户设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、创建代码仓库"><span class="toc-number">3.</span> <span class="toc-text">三、创建代码仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、上传代码"><span class="toc-number">4.</span> <span class="toc-text">四、上传代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、查看效果"><span class="toc-number">5.</span> <span class="toc-text">五、查看效果</span></a></li></ol>
 		</div>
 		
-		<p>原文地址：<a href="http://bbs.kaoyan.com/t5173903p1" target="_blank" rel="external">http://bbs.kaoyan.com/t5173903p1</a> <a href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763104687270e54f73a6f8a9b4623c3933fc239045c0161e0be2629120591c668225cef1f53fd804665447037c7efdff94ecabae23f598d3042760bf64505a06db8ca3632b15087299db81897ad803184ddd3c4de2444bc50120c82e78a2a1764c07880122692d58e3e134811cafa4114e82e773eee2557c633&amp;p=9a769a47828517fb08e29379584b&amp;newp=9c759a42d1d51cb902bfc7710f4192695803ed603cd1d60322c2c91a&amp;user=baidu&amp;fm=sc&amp;query=%BB%AA%BF%C6%D7%D4%B6%AF%BB%AF%B1%A3%D1%D0%B8%B4%CA%D4%CC%E2%C4%BF&amp;qid=&amp;p1=4#baidusnap4" target="_blank" rel="external">百度快照</a></p>
+		<p>本博客是搭建在GitHub上的静态博客，但是由于GitHub免费账户不能创建私有仓库，导致有些东西不想放在GitHub上。</p>
+<p>前两天，在<a href="http://www.freehao123.com/bitbucket/" target="_blank" rel="external">免费资源部落</a>上发现了<a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket</a>，它和GitHub类似，也是一个支持Git的代码托管网站，它吸引我的地方在于，免费账户可以创建无限制个私有仓库！</p>
+<a id="more"></a>
+
+<p><!-- 设置段落(<p>便签)首行缩进2字符 --></p>
+<style type="text/css">
+p { text-indent:2em }
+</style>
+
+<p>于是，今天开始研究在Bitbucket上搭建静态博客。</p>
+<h1 id="一、注册Bitbucket账户">一、注册Bitbucket账户</h1>
+<p>打开Bitbucket官网 <a href="https://bitbucket.org/" target="_blank" rel="external">https://bitbucket.org/</a></p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/sign_up.png" alt=""></p>
+<p>输入用户名、邮箱和密码，点击“Sign up for free”即可。</p>
+<p>我注册的用户名为：JloveU。<a href="https://bitbucket.org/JloveU/" target="_blank" rel="external">我的Bitbucket</a></p>
+<h1 id="二、账户设置">二、账户设置</h1>
+<p>点击右上角头像，选择“管理账户”。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/manage_account.png" alt=""></p>
+<p>出现如下账户设置页面，可以选择语言为“Chinese (China)”，即为简体中文。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/settings.png" alt=""></p>
+<h1 id="三、创建代码仓库">三、创建代码仓库</h1>
+<p>点击页面顶部的“创建”按钮，创建代码仓库。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/create_repertory.png" alt=""></p>
+<p>如果想要一个二级域名的个人主页，要将仓库名称设置为：用户名.bitbucket.org。例如我的用户名是：JloveU，名称就写成了：JloveU.bitbucket.org。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/create_repertory_2.png" alt=""></p>
+<p>点击“创建仓库”，完成创建。</p>
+<h1 id="四、上传代码">四、上传代码</h1>
+<p>因为我是用Bitbucket来建静态网站的，所以就只上传一个 <code>index.html</code> 做测试。</p>
+<p>首先需要电脑上安装Git，Git for Windows下载地址 <a href="http://msysgit.github.io/" target="_blank" rel="external">http://msysgit.github.io/</a>。</p>
+<p>在本地选择一个文件夹作为代码仓库的本地目录，比如我选择 <code>D:\ProgramData\MyBlog\Bitbucket</code>，在其中新建文件夹 <code>JloveU.bitbucket.org</code>，作为远程仓库 <code>JloveU.bitbucket.org</code> 的本地目录。</p>
+<p>在 <code>JloveU.bitbucket.org</code> 文件夹中点击鼠标右键选择 <code>Git Init Here</code>。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/open_Git_Init_Here.png" alt=""></p>
+<p>然后新建 <code>index.html</code>，文件并编辑，如写入如下代码（仅供测试）：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">title</span>&gt;</span>Bitbucket网站测试<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"></div><div class="line">	<span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="title">p</span>&gt;</span>这是一个Bitbucket网站测试！<span class="tag">&lt;/<span class="title">p</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>保存 <code>index.html</code> 文件，在 <code>JloveU.bitbucket.org</code> 文件夹中点击鼠标右键选择 <code>Git Bash</code>。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/open_Git_Bash.png" alt=""></p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/Git_Bash_Window.png" alt=""></p>
+<p>依次输入下面的命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git remote <span class="keyword">add</span> JloveU.bitbucket.org https:<span class="comment">//JloveU@bitbucket.org/JloveU/jloveu.bitbucket.org.git</span></div><div class="line">git <span class="keyword">add</span> <span class="keyword">index</span>.html</div><div class="line">git commit -m <span class="string">'add index.html'</span></div><div class="line">git push -u JloveU.bitbucket.org master</div></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p>上面命令中的<code>&#39;add index.html&#39;</code> 是关于提交的说明信息，可以根据自己的情况更改。</p>
+<p><code>https://JloveU@bitbucket.org/JloveU/jloveu.bitbucket.org.git</code> 是对应仓库的地址，可以点击页面左边栏中的“克隆”得到。</p>
+<p><img src="/images/20140826-Blog_on_Bitbucket/get_repertory_address.png" alt=""></p>
+<h1 id="五、查看效果">五、查看效果</h1>
+<p>如果没有问题的话，现在应该可以打开刚才建的个人静态主页了，在浏览器地址栏中输入：</p>
+<p><a href="http://JloveU.bitbucket.org/" target="_blank" rel="external">http://JloveU.bitbucket.org/</a></p>
+<p>回车，就可以看到刚才写的 <code>index.html</code> 的效果啦！</p>
+<p>OK! 接下来的应该和GitHub上一样了，自己发挥吧！</p>
+<p><font color="#FF00FF"><strong>Enjoy it!</strong></font></p>
+
+
+<p><br></p>
 <hr>
-<p>发表于 2014-3-19 10:02</p>
-<p>今天签协议顺利录取了，所以回报论坛，今年笔试考数电，微机原理，C语言，电路。题目如下。</p>
-<hr>
-<h2 id="一、填空">一、填空</h2>
-<p>(35’=1’<em>25+2’</em>5，第十小题10’)</p>
-<ol>
-<li>补码80H,7FH的真值。</li>
-<li>数据的物理地址和逻辑地址。</li>
-<li>用8K<em>8 ROM扩展成64K</em>8 ROM需多少片，多少地址线。</li>
-<li>堆栈操作后SP的值。</li>
-<li>8051单片机是哈佛结构，哈佛架构是什么，单片机的另一种架构是什么，CPU,寻址方式，MCU,CPLD,FPGA,DSP各是什么，CPLD编程语言有哪些。</li>
-<li>一阶电路全响应=零状态响应+零输入响应。</li>
-<li>戴维南定理。</li>
-<li>一个二端网络开路电压40V，短路电流4A，问外接10欧姆电阻时电阻的功率和电流。</li>
-<li>CMOS<strong>__</strong>功耗极低，频率提高时，功耗的变化（记住Pc=C<em>F</em>Vdd^2），OC门实现<strong>__</strong>功能。</li>
-<li>5个电路题目，Y-▲电阻变换，节点电压法，网孔电流法什么的，计算有点复杂。 </li>
-</ol>
-<h2 id="二、选择和填空">二、选择和填空</h2>
-<p>（8’=1’*8分，比较简单，横杠的表示填空，否则是四选一）</p>
-<ol>
-<li><p>给出Y,A,B的时序图，问Y与A,B的逻辑关系。</p>
-</li>
-<li><p>四变量卡诺图中哪个选项中的最小项逻辑上不相邻。</p>
-</li>
-<li><p>半加器，全加器分别有<strong>_,</strong>个输入端，加法的和与输入A，B的逻辑关系。</p>
-</li>
-<li><p>TTL电路输出可以直接相连的有<strong><em>_</em></strong>门；给出两个OC门线与连接图，求输出F1与输入ABCD的最简逻辑表达式。（填空）</p>
-</li>
-<li><p>好像应该还有个题目，想不起来了。</p>
-</li>
-</ol>
-<h2 id="三、四变量卡诺图化简">三、四变量卡诺图化简</h2>
-<p>（4’*2）</p>
-<p>第一个给的Y是最小项和形式，带无关项；第二个给出Y与ABCD的表达式</p>
-<h2 id="四、带一个控制端A的74161计数器">四、带一个控制端A的74161计数器</h2>
-<p>（10’）</p>
-<p>给出了该芯片的工作模式，电路图和时序图。（用的是同步置数法），求控制端A分别等于0和1时：</p>
-<p>（1）计数器是多少进制计数器。</p>
-<p>（2）画出状态转换表。</p>
-<p>（3）检查自启动。</p>
-<h2 id="五、接口">五、接口</h2>
-<p>（10’）</p>
-<p>现有120个数字变量接口需要处理，问：</p>
-<p>（1）需要多少片8255，需要多少控制地址线。</p>
-<p>（2）画出用74LS138扩展8255的电路图，要求地址从380H开始连续不重叠。</p>
-<p>（3）给出了控制字，要写出8255的初始化程序。</p>
-<h2 id="六、判断题">六、判断题</h2>
-<p>（5’=1’*5）</p>
-<p>都是关于C语言声明的</p>
-<h2 id="七、填空题，写出C语言语句表达式结果">七、填空题，写出C语言语句表达式结果</h2>
-<p>（8’=2’*4）</p>
-<h2 id="八、C语言字符串编程">八、C语言字符串编程</h2>
-<p>（6’）</p>
-<p>检查小串在大串中出现的次数，要求大小串均通过键盘输入。</p>
-<h2 id="九、C语言编程">九、C语言编程</h2>
-<p>（8’）</p>
-<p>求N个数的最大值和最小值。</p>
-<p>要求：</p>
-<p>（1）写出GetMaxMin函数；</p>
-<p>（2）在main函数中调用GetMaxMin函数；</p>
-<p>（3）不能用全局变量。</p>
-<hr>
-<p>今年笔试难度降低了专硕学硕同一套试卷，最高的有80分，平均分学硕56.9，专硕51.9。<br>笔试40分以下被刷的概率很大。</p>
+<p><strong>参考：</strong></p>
+<p><a href="http://www.freehao123.com/bitbucket/" target="_blank" rel="external">Bitbucket免费代码托管空间:可绑域名 私有Repos 个人空间 | 免费资源部落</a></p>
+<p><a href="https://bitbucket.org/" target="_blank" rel="external">Bitbucket官网</a> </p>
+<p><a href="http://www.oschina.net/question/565065_86025" target="_blank" rel="external">Git 常用命令详解（二） - 开源中国社区</a> </p>
+<p><a href="#" title="回顶部"><img src="/images/icons/gotoTOP_1_small.png" alt=""></a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/转载/">转载</a><a href="/tags/考研/">考研</a><a href="/tags/复试/">复试</a><a href="/tags/自动化/">自动化</a>
+  <span></span> <a href="/tags/原创/">原创</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/保研考研/">保研考研</a>
+  <a class="article-category-link" href="/categories/技术杂谈/">技术杂谈</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://jloveu.github.io/2014/07/22/20140721-2014hua_ke_zi_dong_hua_xue_yuan_fu_shi_bi_shi_ti_mu_hui_yi_ban/" data-title="【转】2014华科自动化学院复试笔试题目回忆版 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://jloveu.github.io/2014/08/26/20140826-Blog_on_Bitbucket/" data-title="用Bitbucket搭建博客初探 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -191,19 +179,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/07/22/20140723-yue_du_ji_lu/" title="阅读记录（2014年7月）">
-  <strong>上一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
-  <span>
-  阅读记录（2014年7月）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/07/22/20140721-2013hua_ke_kong_zhi_xi_zi_dong_hua_bao_yan_bi_shi/"  title="【转】2013华科控制系自动化保研笔试">
+<a href="/2014/08/25/20140825-my_programming_specification/"  title="我的编程规范/习惯（持续更新中……）">
  <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
- <span>【转】2013华科控制系自动化保研笔试
+ <span>我的编程规范/习惯（持续更新中……）
 </span>
 </a>
 </div>
@@ -213,7 +193,7 @@
 	
 <section class="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2014/07/22/20140721-2014hua_ke_zi_dong_hua_xue_yuan_fu_shi_bi_shi_ti_mu_hui_yi_ban/" data-title="【转】2014华科自动化学院复试笔试题目回忆版" data-url=""></div>
+	<div class="ds-thread" data-thread-key="2014/08/26/20140826-Blog_on_Bitbucket/" data-title="用Bitbucket搭建博客初探" data-url=""></div>
 <!-- 多说评论框 end -->
 </section>
 
@@ -222,7 +202,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、填空"><span class="toc-number">1.</span> <span class="toc-text">一、填空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、选择和填空"><span class="toc-number">2.</span> <span class="toc-text">二、选择和填空</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、四变量卡诺图化简"><span class="toc-number">3.</span> <span class="toc-text">三、四变量卡诺图化简</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、带一个控制端A的74161计数器"><span class="toc-number">4.</span> <span class="toc-text">四、带一个控制端A的74161计数器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、接口"><span class="toc-number">5.</span> <span class="toc-text">五、接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、判断题"><span class="toc-number">6.</span> <span class="toc-text">六、判断题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、填空题，写出C语言语句表达式结果"><span class="toc-number">7.</span> <span class="toc-text">七、填空题，写出C语言语句表达式结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、C语言字符串编程"><span class="toc-number">8.</span> <span class="toc-text">八、C语言字符串编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、C语言编程"><span class="toc-number">9.</span> <span class="toc-text">九、C语言编程</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、注册Bitbucket账户"><span class="toc-number">1.</span> <span class="toc-text">一、注册Bitbucket账户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、账户设置"><span class="toc-number">2.</span> <span class="toc-text">二、账户设置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、创建代码仓库"><span class="toc-number">3.</span> <span class="toc-text">三、创建代码仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、上传代码"><span class="toc-number">4.</span> <span class="toc-text">四、上传代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、查看效果"><span class="toc-number">5.</span> <span class="toc-text">五、查看效果</span></a></li></ol>
   </div>
 
 <div id="asidepart">
