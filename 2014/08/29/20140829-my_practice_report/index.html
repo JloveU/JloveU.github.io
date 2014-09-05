@@ -78,7 +78,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-08-29T14:30:00.000Z" itemprop="datePublished">8月 29 2014</time>
-    更新日期:<time datetime="2014-08-29T09:42:59.000Z" itemprop="dateModified">8月 29 2014</time>
+    更新日期:<time datetime="2014-09-02T11:26:23.000Z" itemprop="dateModified">9月 2 2014</time>
     
   </p>
 </header>
@@ -159,10 +159,15 @@ p{text-indent:2em}
 <h2 id="2-_基于拓扑聚类的误匹配消除">2. 基于拓扑聚类的误匹配消除</h2>
 <p>SIFT特征匹配虽然的确很精确，但也难免会出现错误的匹配对，于是出现了很多消除误匹配的方法，基于拓扑聚类的误匹配消除方法就是其中一种。</p>
 <p>基于拓扑聚类的误匹配消除方法来自于我校田金文老师等三人等发表的一篇文章<sup>[3]</sup>。</p>
+<p>通过对先前检测出的特征匹配点对进行拓扑聚类，根据点集之间的拓扑关系，可以分为一下4种情况：</p>
+<p><img src="/images/20140829-my_practice_report/6.png" alt=""></p>
+<div align="center">两个区域之间的4种关系</div>
+
+<p>在待匹配的两帧图像中，一幅图中两个区域的拓扑关系映射到另一幅图中时，拓扑关系应不变。</p>
+<p>根据这个原理，可以剔除大部分误匹配。</p>
 <p>基于一般的两帧的宽基线匹配模型，该算法首先生成两帧之间拓扑不变的匹配集群，然后从集群种排除误匹配。实验结果表明，该算法能从低精度的初始SIFT的宽基线图像匹配对中有效地提取高精度的尺度不变特征变换（SIFT）匹配。此外，该算法在和其他算法的对比中总是表现最佳或接近最佳，这表明它在排除误匹配特征点时比其他方法更具有鲁棒性。</p>
-<p>……</p>
 <h2 id="3-_运动分层">3. 运动分层</h2>
-<p>……</p>
+<p>运动分层是一种视频图像分割技术。</p>
 <h2 id="4-_Active_Contour主动轮廓">4. Active Contour主动轮廓</h2>
 <p>主动轮廓模型主要用于解决图像中目标物体的分割操作。理论上是可以解决二维乃至多维的情况，不过最初的模型是在二维图像上建立的。</p>
 <p>主动轮廓模型是一个自顶向下定位图像特征的机制，用户或其他自动处理过程通过事先在感兴趣目标附近放置一个初始轮廓线，在内部能量（内力）和外部能量（外力）的作用下变形外部能量吸引活动轮廓朝物体边缘运动，而内部能量保持活动轮廓的光滑性和拓扑性，当能量达到最小时，活动轮廓收敛到所要检测的物体边缘。</p>
@@ -203,8 +208,9 @@ p{text-indent:2em}
 <p>[1] DAVID G. LOWE, “Distinctive image features from scale-invariant keypoints, International Journal of Computer Vision 60(2), 91–110, 2004.</p>
 <p>[2] Rachel-Zhang，SIFT特征提取分析，CSDN博客频道，2012-06-06。</p>
 <p>[3] Yongtao Wang, Dazhi Zhang, Jinwen Tian, Topological clustering and its application for discarding wide-baseline mismatches, Optical Engineering 47(5), 057202 (May 2008).</p>
-<p>[4] Yongtao Wang, Junbin Gong, Dazhi Zhang, Chenqiang Gao, Jinwen Tian, and Huanqiang Zeng, Large Disparity Motion Layer Extraction via Topological Clustering, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 20, NO. 1, JANUARY 2011</p>
-<p>[5] 张辉，吴月宁，一种由内向外的 Active Contour 模型图像分割算法，计算机工程与应用，2011，47(23)</p>
+<p>[4] Yongtao Wang, Junbin Gong, Dazhi Zhang, Chenqiang Gao, Jinwen Tian, and Huanqiang Zeng, Large Disparity Motion Layer Extraction via Topological Clustering, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 20, NO. 1, JANUARY 2011.</p>
+<p>[5] 张辉，吴月宁，一种由内向外的 Active Contour 模型图像分割算法，计算机工程与应用，2011，47(23)。</p>
+<p>[6] Yongtao Wang, Junbin Gong, Dazhi Zhang, Chenqiang Gao, Jinwen Tian, Huanqiang Zeng, Large Disparity Motion Layer Extraction via Topological Clustering, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 20, NO. 1, JANUARY 2011.</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -233,6 +239,14 @@ p{text-indent:2em}
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2014/09/01/20140901-yue_du_ji_lu/" title="阅读记录（2014年9月 持续更新中……）">
+  <strong>上一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+  <span>
+  阅读记录（2014年9月 持续更新中……）</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2014/08/26/20140826-Blog_on_Bitbucket/"  title="用Bitbucket搭建博客初探">
@@ -273,7 +287,7 @@ p{text-indent:2em}
 		
 			<li><a href="/categories/论文报告/" title="论文报告">论文报告<sup>1</sup></a></li>
 		
-			<li><a href="/categories/阅读记录/" title="阅读记录">阅读记录<sup>2</sup></a></li>
+			<li><a href="/categories/阅读记录/" title="阅读记录">阅读记录<sup>3</sup></a></li>
 		
 		</ul>
 </div>
@@ -288,7 +302,7 @@ p{text-indent:2em}
 		
 			<li><a href="/tags/保研/" title="保研">保研<sup>5</sup></a></li>
 		
-			<li><a href="/tags/原创/" title="原创">原创<sup>7</sup></a></li>
+			<li><a href="/tags/原创/" title="原创">原创<sup>8</sup></a></li>
 		
 			<li><a href="/tags/复试/" title="复试">复试<sup>6</sup></a></li>
 		
@@ -312,7 +326,7 @@ p{text-indent:2em}
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Android开发/" style="font-size: 12.50px;">Android开发</a><a href="/tags/保研/" style="font-size: 15.00px;">保研</a><a href="/tags/原创/" style="font-size: 20.00px;">原创</a><a href="/tags/复试/" style="font-size: 17.50px;">复试</a><a href="/tags/第一桶金/" style="font-size: 10.00px;">第一桶金</a><a href="/tags/编程规范/" style="font-size: 10.00px;">编程规范</a><a href="/tags/考研/" style="font-size: 10.00px;">考研</a><a href="/tags/自动化/" style="font-size: 17.50px;">自动化</a><a href="/tags/计划监督者/" style="font-size: 10.00px;">计划监督者</a><a href="/tags/转载/" style="font-size: 20.00px;">转载</a>
+       <a href="/tags/Android开发/" style="font-size: 12.00px;">Android开发</a><a href="/tags/保研/" style="font-size: 14.00px;">保研</a><a href="/tags/原创/" style="font-size: 20.00px;">原创</a><a href="/tags/复试/" style="font-size: 16.00px;">复试</a><a href="/tags/第一桶金/" style="font-size: 10.00px;">第一桶金</a><a href="/tags/编程规范/" style="font-size: 10.00px;">编程规范</a><a href="/tags/考研/" style="font-size: 10.00px;">考研</a><a href="/tags/自动化/" style="font-size: 16.00px;">自动化</a><a href="/tags/计划监督者/" style="font-size: 10.00px;">计划监督者</a><a href="/tags/转载/" style="font-size: 18.00px;">转载</a>
     </div>
   </div>
 
@@ -320,7 +334,7 @@ p{text-indent:2em}
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">九月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
   </div>
 
 
