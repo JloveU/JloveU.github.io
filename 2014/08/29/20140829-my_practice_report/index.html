@@ -78,7 +78,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-08-29T14:30:00.000Z" itemprop="datePublished">8月 29 2014</time>
-    更新日期:<time datetime="2014-09-02T11:26:23.000Z" itemprop="dateModified">9月 2 2014</time>
+    更新日期:<time datetime="2014-09-16T18:32:36.000Z" itemprop="dateModified">9月 17 2014</time>
     
   </p>
 </header>
@@ -101,11 +101,10 @@ p{text-indent:2em}
 <hr>
 <h1 id="目录"><div align="center">目录</div></h1>
 <hr>
-<p>一、实习目的和意义</p>
-<p>二、实习内容概述</p>
-<p>三、前提知识</p>
-<p>四、实践内容</p>
-<p>五、收获和体会</p>
+<p>一、实习目的、意义及内容概述</p>
+<p>二、前提知识</p>
+<p>三、实践内容</p>
+<p>四、收获和体会</p>
 <p>参考文献</p>
 <hr>
 <hr>
@@ -165,7 +164,7 @@ p{text-indent:2em}
 
 <p>在待匹配的两帧图像中，一幅图中两个区域的拓扑关系映射到另一幅图中时，拓扑关系应不变。</p>
 <p>根据这个原理，可以剔除大部分误匹配。</p>
-<p>基于一般的两帧的宽基线匹配模型，该算法首先生成两帧之间拓扑不变的匹配集群，然后从集群种排除误匹配。实验结果表明，该算法能从低精度的初始SIFT的宽基线图像匹配对中有效地提取高精度的尺度不变特征变换（SIFT）匹配。此外，该算法在和其他算法的对比中总是表现最佳或接近最佳，这表明它在排除误匹配特征点时比其他方法更具有鲁棒性。</p>
+<p>基于一般的两帧的宽基线匹配模型，该算法首先生成两帧之间拓扑不变的匹配集群，然后从集群中排除误匹配。实验结果表明，该算法能从低精度的初始SIFT的宽基线图像匹配对中有效地提取高精度的尺度不变特征变换（SIFT）匹配。此外，该算法在和其他算法的对比中总是表现最佳或接近最佳，这表明它在排除误匹配特征点时比其他方法更具有鲁棒性。</p>
 <h2 id="3-_运动分层">3. 运动分层</h2>
 <p>运动分层是一种视频图像分割技术。</p>
 <h2 id="4-_Active_Contour主动轮廓">4. Active Contour主动轮廓</h2>
@@ -199,13 +198,19 @@ p{text-indent:2em}
 <hr>
 <hr>
 <h1 id="三、实践内容">三、实践内容</h1>
+<h2 id="1-_基于主动轮廓思想的图像配准方法简介">1. 基于主动轮廓思想的图像配准方法简介</h2>
+<h2 id="2-_代码实现">2. 代码实现</h2>
+<h2 id="3-_调试和改进">3. 调试和改进</h2>
+<h2 id="4-_基于拓扑聚类的局部匹配流方法简介">4. 基于拓扑聚类的局部匹配流方法简介</h2>
+<h2 id="5-_代码实现">5. 代码实现</h2>
+<h2 id="6-_调试和改进">6. 调试和改进</h2>
 <hr>
 <hr>
 <h1 id="四、收获和体会">四、收获和体会</h1>
 <hr>
 <hr>
 <h1 id="参考文献">参考文献</h1>
-<p>[1] DAVID G. LOWE, “Distinctive image features from scale-invariant keypoints, International Journal of Computer Vision 60(2), 91–110, 2004.</p>
+<p>[1] DAVID G. LOWE, Distinctive image features from scale-invariant keypoints, International Journal of Computer Vision 60(2), 91–110, 2004.</p>
 <p>[2] Rachel-Zhang，SIFT特征提取分析，CSDN博客频道，2012-06-06。</p>
 <p>[3] Yongtao Wang, Dazhi Zhang, Jinwen Tian, Topological clustering and its application for discarding wide-baseline mismatches, Optical Engineering 47(5), 057202 (May 2008).</p>
 <p>[4] Yongtao Wang, Junbin Gong, Dazhi Zhang, Chenqiang Gao, Jinwen Tian, and Huanqiang Zeng, Large Disparity Motion Layer Extraction via Topological Clustering, IEEE TRANSACTIONS ON IMAGE PROCESSING, VOL. 20, NO. 1, JANUARY 2011.</p>
