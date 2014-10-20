@@ -1,0 +1,473 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CodeBlocks中使用OpenCV-2.4.9完全教程 | JloveU&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="yuqiang">
+    
+    <meta name="description" content="本文介绍了在CodeBlocks开发环境中使用OpenCV-2.4.9建立工程的方法，包括使用CMake编译OpenCV的过程。">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple_icon.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple_icon.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JloveU&#39;s Blog" title="JloveU&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JloveU&#39;s Blog">JloveU&#39;s Blog</a></h1>
+				<h2 class="blog-motto">我要一步一步往上爬！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jloveu.github.io/">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <!-- 说明：本文件是定义网页整体布局。 ——于强 2014-07-25 -->
+<div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/20/20141020-opencv_on_codeblocks/" title="CodeBlocks中使用OpenCV-2.4.9完全教程" itemprop="url">CodeBlocks中使用OpenCV-2.4.9完全教程</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://jloveu.github.io/" title="yuqiang">yuqiang</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-10-20T13:30:00.000Z" itemprop="datePublished">10月 20 2014</time>
+    更新日期:<time datetime="2014-10-20T09:36:53.000Z" itemprop="dateModified">10月 20 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CodeBlocks简介"><span class="toc-number">2.</span> <span class="toc-text">CodeBlocks简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MinGW简介"><span class="toc-number">3.</span> <span class="toc-text">MinGW简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenCV简介"><span class="toc-number">4.</span> <span class="toc-text">OpenCV简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMake简介"><span class="toc-number">5.</span> <span class="toc-text">CMake简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装CodeBlocks"><span class="toc-number">6.</span> <span class="toc-text">安装CodeBlocks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编译OpenCV"><span class="toc-number">7.</span> <span class="toc-text">编译OpenCV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在CodeBlocks中配置OpenCV环境"><span class="toc-number">8.</span> <span class="toc-text">在CodeBlocks中配置OpenCV环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在CodeBlocks中新建基于OpenCV的工程"><span class="toc-number">9.</span> <span class="toc-text">在CodeBlocks中新建基于OpenCV的工程</span></a></li></ol>
+		</div>
+		
+		<p>本文介绍了在CodeBlocks开发环境中使用OpenCV-2.4.9建立工程的方法，包括使用CMake编译OpenCV的过程。</p>
+<a id="more"></a>
+
+<style type="text/css">
+p{text-indent:2em}
+</style>
+
+<h1 id="背景">背景</h1>
+<p>本人之前在C/C++开发过程中，使用的集成开发环境（IDE）一直是Visual Studio系列，其中用的时间最长的是VS2010，并且为了不使电脑运行变慢，一直在VMware虚拟机中安装VS软件。</p>
+<p>最近又在虚拟机中新安装了VS2013 Professional with Update 3，安装过程用了将近一天的时间。其体积之大和安装速度之慢让我有了更换IDE的想法。于是，经过上网搜索，最终决定试着转向CodeBlocks。</p>
+<p>由于我的专业是图像处理相关的，所以OpenCV用得比较多，之前在VS2010中使用OpenCV，只需要将官网下载的文件解压即可。而使用CodeBlocks建立基于OpenCV的工程的时候出了问题，在OpenCV-2.4.7及以后版本中没有了对应MinGW的库文件，即使是OpenCV-2.4.6及以前的版本中对应MinGW的库文件也需要和电脑上安装的MinGW/GCC编译器版本相同，否则编译后的程序会运行出错。于是，需要自己动手重新编译OpenCV。</p>
+<h1 id="CodeBlocks简介">CodeBlocks简介</h1>
+<p>Code::Blocks 是一个开放源码的全功能的跨平台C/C++集成开发环境。 Code::Blocks是开放源码软件。Code::Blocks由纯粹的C++语言开发完成，它使用了著名的图形界面库wxWidgets(2.6.2 unicode)版。对于追求完美的C++程序员，再也不必忍受Eclipse的缓慢，再也不必忍受VS.NET的庞大和高昂的价格。</p>
+<p>（来自：<a href="http://baike.baidu.com/view/1562377.htm" target="_blank" rel="external">Code::Blocks_百度百科</a>）</p>
+<h1 id="MinGW简介">MinGW简介</h1>
+<p>MinGW，是Minimalist GNU on Windows的缩写。它是一个可自由使用和自由发布的Windows特定头文件和使用GNU工具集导入库的集合，允许你在GNU/Linux和Windows平台生成本地的Windows程序而不需要第三方C运行时库。</p>
+<p>（来自：<a href="http://baike.baidu.com/view/98554.htm" target="_blank" rel="external">mingw_百度百科</a>）</p>
+<h1 id="OpenCV简介">OpenCV简介</h1>
+<p>OpenCV的全称是：Open Source Computer Vision Library。OpenCV是一个基于（开源）发行的跨平台计算机视觉库，可以运行在Linux、Windows和Mac OS操作系统上。它轻量级而且高效——由一系列 C 函数和少量 C++ 类构成，同时提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。</p>
+<p>（来自：<a href="http://baike.baidu.com/view/1343775.htm" target="_blank" rel="external">opencv_百度百科</a>）</p>
+<h1 id="CMake简介">CMake简介</h1>
+<p>CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，能测试编译器所支持的C++特性,类似UNIX下的automake。只是 CMake 的组态档取名为 CmakeLists.txt。Cmake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile 或 Windows Visual C++ 的 projects/workspaces），然后再依一般的建构方式使用。这使得熟悉某个集成开发环境（IDE）的开发者可以用标准的方式建构他的软件，这种可以使用各平台的原生建构系统的能力是 CMake 和 SCons 等其他类似系统的区别之处。</p>
+<p>（来自：<a href="http://baike.baidu.com/view/1126160.htm" target="_blank" rel="external">cmake_百度百科</a>）</p>
+<h1 id="安装CodeBlocks">安装CodeBlocks</h1>
+<p>到<a href="http://www.codeblocks.org/" target="_blank" rel="external">CodeBlocks官网</a>下载最新版本的安装文件。</p>
+<p>我使用的是Windows 7 x64系统，下载的是V13.12带MinGW的版本，下载地址如下：<br><a href="http://cznic.dl.sourceforge.net/project/codeblocks/Binaries/13.12/Windows/codeblocks-13.12mingw-setup.exe" target="_blank" rel="external">http://cznic.dl.sourceforge.net/project/codeblocks/Binaries/13.12/Windows/codeblocks-13.12mingw-setup.exe</a></p>
+<p>安装过程一路Next就好。</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/1.png" alt=""><br><img src="/images/20141020-opencv_on_codeblocks/2.png" alt=""><br><img src="/images/20141020-opencv_on_codeblocks/3.png" alt=""><br><img src="/images/20141020-opencv_on_codeblocks/4.png" alt=""></p>
+<p>安装完成之后运行，整体界面如下：</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/6.png" alt=""></p>
+<p>关于界面如下：</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/5.png" alt=""></p>
+<h1 id="编译OpenCV">编译OpenCV</h1>
+<p>到<a href="http://opencv.org/" target="_blank" rel="external">OpenCV官网</a>下载安装文件，可根据自己不同需要下载不同版本，如果对OpenCV还没有深入了解的话，下载最新版本即可。</p>
+<p>我开始学习OpenCV的时候是2.4.5版本，目前已经更新到3.0 alpha版本。</p>
+<p>OpenCV-2.4.6版本opencv/build/x86目录下的内容如下：</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/7.png" alt=""></p>
+<p>OpenCV-2.4.7版本opencv/build/x86目录下的内容如下：</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/8.png" alt=""></p>
+<p>OpenCV-2.4.9版本opencv/build/x86目录下的内容如下：</p>
+<p><img src="/images/20141020-opencv_on_codeblocks/9.png" alt=""></p>
+<p>很明显，OpenCV-2.4.7及以后版本中没有了mingw这个文件夹，也就是没有了对应MinGW编译器的库文件，因此需要自己动手编译生成。</p>
+<ol>
+<li>到<a href="http://www.cmake.org/" target="_blank" rel="external">CMake官网</a>下载CMake安装文件。<br>目前最新版本是3.0.2，我下载的是2.8.12.2版本的Windows平台免安装文件，下载地址如下：<br><a href="http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.zip" target="_blank" rel="external">http://www.cmake.org/files/v2.8/cmake-2.8.12.2-win32-x86.zip</a></li>
+<li>将下载得到的 <code>cmake-2.8.12.2-win32-x86.zip</code> 文件解压到任意路径（可能需要路径中不包含中文），进入bin目录下，运行 <code>cmake-gui.exe</code>。<br>（注：我一开始在Sandboxie沙箱中运行的这个程序，出现了很多问题，一直没有成功，后来不在沙箱中运行而是直接双击运行就成功了。）</li>
+<li>点击 <code>Browse Source...</code>，选择解压出来的OpenCV中的source目录（OpenCV-2.4.6及以前版本选择最外层的opencv目录，也就是最外层的并且包含一个 <code>CMakeLists.txt</code> 文件的目录）；<br>点击 <code>Browse Build...</code>，选择用来存放编译得到的库文件所在的文件夹（可以自己新建）。如下所示：<br><img src="/images/20141020-opencv_on_codeblocks/10.png" alt=""></li>
+<li>点击 <code>Configure</code>，如果上一步选择的Build文件夹不存在，将提示是否创建：<br><img src="/images/20141020-opencv_on_codeblocks/11.png" alt=""><br>点击 <code>Yes</code> 创建该文件夹。</li>
+<li>在 <code>Specify the generator for this project</code> 处选择 <code>CodeBlocks - MinGW Makefiles</code>，下面选择 <code>Specify native compilers</code>。<br><img src="/images/20141020-opencv_on_codeblocks/12.png" alt=""></li>
+<li>点击 <code>Next</code>，选择编译器位置。<br><img src="/images/20141020-opencv_on_codeblocks/13.png" alt=""><br>因为我安装的CodeBlocks自带了MinGW/GCC编译器，CodeBlocks的安装目录为 <code>D:\Program Files\CodeBlocks</code>，其中包含MinGW的目录 <code>D:\Program Files\CodeBlocks\MinGW</code>。<br>所以此处选择C编译器的位置为 <code>D:/Program Files/CodeBlocks/MinGW/bin/gcc.exe</code>，C++编译器的位置为 <code>D:/Program Files/CodeBlocks/MinGW/bin/g++.exe</code>。</li>
+<li>点击 <code>Finish</code>。<br><img src="/images/20141020-opencv_on_codeblocks/14.png" alt=""><br>等待进度条结束（这个过程大概七八分钟，如果时间很长还没结束且停在一个地方，可能就失败了，我是在Sandboxie沙箱中运行时出现过这种情况）。<br>当输出 <code>Configuring done</code> 时即代表完成此步骤。此时界面如下：<br><img src="/images/20141020-opencv_on_codeblocks/15.png" alt=""></li>
+<li>在红色区域下拉找到 <code>CMAKE_BUILD_TYPE</code>，在其值处输入 <code>Debug</code>，即生成Debug版的库文件，若输入 <code>Release</code> 或者留空，则生成Release版的库文件。<br><img src="/images/20141020-opencv_on_codeblocks/16.png" alt=""><br>再次点击 <code>Configure</code>。<br><img src="/images/20141020-opencv_on_codeblocks/17.png" alt=""><br>等待进度条结束（这个过程很短，大概几秒就结束）。<br>当输出 <code>Configuring done</code> 时即代表完成此步骤。此时界面如下：<br><img src="/images/20141020-opencv_on_codeblocks/18.png" alt=""></li>
+<li>点击 <code>Generate</code>。<br><img src="/images/20141020-opencv_on_codeblocks/19.png" alt=""><br>等待进度条结束（这个过程也很短，大概十几秒就结束）。<br>当输出 <code>Generating done</code> 时即代表完成此步骤。此时界面如下：<br><img src="/images/20141020-opencv_on_codeblocks/20.png" alt=""></li>
+<li>此时在Windows资源管理器中打开第3步中选择的存放编译得到的库文件所在的文件夹，其中的文件如下：<br><img src="/images/20141020-opencv_on_codeblocks/21.png" alt=""><br>其中有一个 <code>OpenCV.cbp</code> 文件，这是CodeBlocks的工程文件。</li>
+<li>用CodeBlocks打开上面的 <code>OpenCV.cbp</code> 文件，即打开了用来编译OpenCV的工程。<br><img src="/images/20141020-opencv_on_codeblocks/22.png" alt=""><br>点击图中红色方框所示的按钮（Build），开始编译。<br>Build log窗口会显示当前编译进度：<br><img src="/images/20141020-opencv_on_codeblocks/23.png" alt=""><br>此过程较长，需要一个多小时的时间。</li>
+<li>等待编译结束。<br>当出现以下结果时代表编译完成：<br><img src="/images/20141020-opencv_on_codeblocks/24.png" alt=""></li>
+<li>编译完成后，在Windows资源管理器中打开第3步中选择的存放编译得到的库文件所在的文件夹，其中有两个文件夹分别是 <code>bin</code> 和 <code>lib</code>，这两个文件夹就是以后基于OpenCV要用到的库文件。在第8步可以修改 <code>CMAKE_BUILD_TYPE</code> 的值，得到Debug和Release两个版本的库文件。<br>将 <code>bin</code> 和 <code>lib</code> 这两个文件夹复制或剪切到OpenCV-2.4.9解压出来的目录 <code>opencv/build/x86/mingw</code> 下（mingw是自己新建的文件夹，代表支持MinGW/GCC编译器的库文件夹）。</li>
+<li>OpenCV编译完成！</li>
+</ol>
+<h1 id="在CodeBlocks中配置OpenCV环境">在CodeBlocks中配置OpenCV环境</h1>
+<p>编译完OpenCV后，即可在CodeBlocks中创建基于OpenCV的工程，但需先配置OpenCV环境。</p>
+<ol>
+<li>打开CodeBlocks，点击菜单 <code>Settings</code>-&gt;<code>Global variables...</code>。<br><img src="/images/20141020-opencv_on_codeblocks/25.png" alt=""></li>
+<li>点击下图中的New，新建全局变量。<br><img src="/images/20141020-opencv_on_codeblocks/26.png" alt=""><br><img src="/images/20141020-opencv_on_codeblocks/27.png" alt=""><br>输入变量名：<code>cv</code>，点击OK。</li>
+<li>设置cv变量的 <code>base</code>、<code>include</code>、<code>lib</code>、<code>bin</code> 的路径。<br>例如，我将OpenCV-2.4.9解压到 <code>D:\ProgramData\opencv249\</code> 目录下，将编译OpenCV得到的 <code>bin</code> 和 <code>lib</code> 这两个文件夹放在 <code>D:\ProgramData\opencv249\opencv\build\x86\mingw</code> 目录下，于是我将cv变量设置如下：<br><img src="/images/20141020-opencv_on_codeblocks/28.png" alt=""></li>
+<li>点击close，完成配置。</li>
+</ol>
+<h1 id="在CodeBlocks中新建基于OpenCV的工程">在CodeBlocks中新建基于OpenCV的工程</h1>
+<p>以上各步骤完成之后就可以新建基于OpenCV的工程了。</p>
+<ol>
+<li>打开CodeBlocks，点击菜单 <code>File</code>-&gt;<code>New</code>-&gt;<code>Project...</code>。<br><img src="/images/20141020-opencv_on_codeblocks/29.png" alt=""></li>
+<li>在新建项目向导中，<code>Category</code> 处选择 <code>Console</code>，再点击 <code>OpenCV project</code>，然后点击go。<br><img src="/images/20141020-opencv_on_codeblocks/30.png" alt=""></li>
+<li>出现下面的提示界面，如果不希望以后出现此界面，则勾选 <code>Skip this page next time</code>，点击Next。<br><img src="/images/20141020-opencv_on_codeblocks/31.png" alt=""></li>
+<li>输入工程名，点击Next。<br><img src="/images/20141020-opencv_on_codeblocks/32.png" alt=""></li>
+<li>设置OpenCV的位置，此处就和配置OpenCV环境时设置的全局变量 <code>cv</code> 的 <code>base</code> 路径相同即可。点击Next。<br><img src="/images/20141020-opencv_on_codeblocks/33.png" alt=""></li>
+<li>设置OpenCV版本。例如我使用的OpenCV是2.4.9版本，于是将下面的 <code>major</code>、<code>minor</code>、<code>revision</code> 分别设置为 <code>2</code>、<code>4</code>、<code>9</code>。点击Next。<br><img src="/images/20141020-opencv_on_codeblocks/34.png" alt=""></li>
+<li>选择编译器。选择默认的 <code>GNU GCC Compiler</code> 即可。Debug和Release可按需要选择。<br><img src="/images/20141020-opencv_on_codeblocks/35.png" alt=""></li>
+<li>点击Finish，即完成了基于OpenCV的工程的创建。<br>此时的工程包含3个文件（再眼熟不过的lena.jpg出现啦！）：<br><img src="/images/20141020-opencv_on_codeblocks/36.png" alt=""><br>结构如下：<br><img src="/images/20141020-opencv_on_codeblocks/37.png" alt=""><br>可见已经自动生成了一个带测试OpenCV的源码的文件。</li>
+<li>点击 <code>Build and run</code>，编译生成可执行文件并运行。结果如下：<br><img src="/images/20141020-opencv_on_codeblocks/38.png" alt=""></li>
+<li>大功告成！</li>
+</ol>
+<p>至此，在CodeBlocks中建立基于OpenCV-2.4.9的整个过程结束！然后就是自己编程了！</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/原创/">原创</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/编程开发/">编程开发</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://jloveu.github.io/2014/10/20/20141020-opencv_on_codeblocks/" data-title="CodeBlocks中使用OpenCV-2.4.9完全教程 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/10/18/20141017-opencv_learning_notes/"  title="OpenCV学习笔记">
+ <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+ <span>OpenCV学习笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014/10/20/20141020-opencv_on_codeblocks/" data-title="CodeBlocks中使用OpenCV-2.4.9完全教程" data-url=""></div>
+<!-- 多说评论框 end -->
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CodeBlocks简介"><span class="toc-number">2.</span> <span class="toc-text">CodeBlocks简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MinGW简介"><span class="toc-number">3.</span> <span class="toc-text">MinGW简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenCV简介"><span class="toc-number">4.</span> <span class="toc-text">OpenCV简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CMake简介"><span class="toc-number">5.</span> <span class="toc-text">CMake简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装CodeBlocks"><span class="toc-number">6.</span> <span class="toc-text">安装CodeBlocks</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编译OpenCV"><span class="toc-number">7.</span> <span class="toc-text">编译OpenCV</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在CodeBlocks中配置OpenCV环境"><span class="toc-number">8.</span> <span class="toc-text">在CodeBlocks中配置OpenCV环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在CodeBlocks中新建基于OpenCV的工程"><span class="toc-number">9.</span> <span class="toc-text">在CodeBlocks中新建基于OpenCV的工程</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/保研考研/" title="保研考研">保研考研<sup>6</sup></a></li>
+		
+			<li><a href="/categories/技术杂谈/" title="技术杂谈">技术杂谈<sup>1</sup></a></li>
+		
+			<li><a href="/categories/编程开发/" title="编程开发">编程开发<sup>5</sup></a></li>
+		
+			<li><a href="/categories/茶余饭后/" title="茶余饭后">茶余饭后<sup>2</sup></a></li>
+		
+			<li><a href="/categories/论文报告/" title="论文报告">论文报告<sup>1</sup></a></li>
+		
+			<li><a href="/categories/阅读记录/" title="阅读记录">阅读记录<sup>4</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>2</sup></a></li>
+		
+			<li><a href="/tags/保研/" title="保研">保研<sup>5</sup></a></li>
+		
+			<li><a href="/tags/原创/" title="原创">原创<sup>12</sup></a></li>
+		
+			<li><a href="/tags/复试/" title="复试">复试<sup>6</sup></a></li>
+		
+			<li><a href="/tags/第一桶金/" title="第一桶金">第一桶金<sup>1</sup></a></li>
+		
+			<li><a href="/tags/编程规范/" title="编程规范">编程规范<sup>1</sup></a></li>
+		
+			<li><a href="/tags/考研/" title="考研">考研<sup>1</sup></a></li>
+		
+			<li><a href="/tags/自动化/" title="自动化">自动化<sup>6</sup></a></li>
+		
+			<li><a href="/tags/计划监督者/" title="计划监督者">计划监督者<sup>1</sup></a></li>
+		
+			<li><a href="/tags/转载/" title="转载">转载<sup>7</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Android开发/" style="font-size: 12.00px;">Android开发</a><a href="/tags/保研/" style="font-size: 14.00px;">保研</a><a href="/tags/原创/" style="font-size: 20.00px;">原创</a><a href="/tags/复试/" style="font-size: 16.00px;">复试</a><a href="/tags/第一桶金/" style="font-size: 10.00px;">第一桶金</a><a href="/tags/编程规范/" style="font-size: 10.00px;">编程规范</a><a href="/tags/考研/" style="font-size: 10.00px;">考研</a><a href="/tags/自动化/" style="font-size: 16.00px;">自动化</a><a href="/tags/计划监督者/" style="font-size: 10.00px;">计划监督者</a><a href="/tags/转载/" style="font-size: 18.00px;">转载</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">十月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">九月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://jloveu.github.io/IloveUFangYu/a" target="_blank" title="Baby I love U">2014七夕情人节</a></li>
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><!-- 说明：本文件定义网页最低端的作者图片、2行作者介绍、作者各网站链接和Power by。 ——于强 2014-07-25 -->
+<div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 欢迎参观我的博客！ <br/>
+			在这里记载的，都是我学习生活的点滴记录。</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2755919507" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/JloveU" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://jloveu.github.io/" target="_blank" title="yuqiang">yuqiang</a>
+		
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe30b6f9dbaadde33318eaad49ef6e9e5' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		</p>
+
+</div>
+</footer>
+    <!-- 说明：本文件是定义网页中，紧接着文章下面到footer的那一块，包括所属分类、包含标签、社交网站分享、前后篇博文链接、多说评论等。 ——于强 2014-07-25 -->
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<!-- 这段代码是多说评论组件的js代码，其中有一句“ds.src = '//static.duoshuo.com/embed.js';”被我改成了“ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';” ——于强 2014-07-25 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jloveu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
