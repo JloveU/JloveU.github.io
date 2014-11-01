@@ -1,0 +1,1073 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>《C++ Primer 中文版（第4版）》学习记录 | JloveU&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="yuqiang">
+    
+    <meta name="description" content="本文为在阅读《C++ Primer 中文版（第4版）》的过程中记录的知识点。">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/apple_icon.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/apple_icon.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="JloveU&#39;s Blog" title="JloveU&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="JloveU&#39;s Blog">JloveU&#39;s Blog</a></h1>
+				<h2 class="blog-motto">我要一步一步往上爬！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">存档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jloveu.github.io/">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <!-- 说明：本文件是定义网页整体布局。 ——于强 2014-07-25 -->
+<div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/26/20141026-C++_Primer_Chinese_Version_4th_Edition_learning_notes/" title="《C++ Primer 中文版（第4版）》学习记录" itemprop="url">《C++ Primer 中文版（第4版）》学习记录</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://jloveu.github.io/" title="yuqiang">yuqiang</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-10-26T13:00:00.000Z" itemprop="datePublished">10月 26 2014</time>
+    更新日期:<time datetime="2014-11-01T14:29:05.000Z" itemprop="dateModified">11月 1 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《C++_Primer_中文版（第4版）》学习记录"><span class="toc-number">1.</span> <span class="toc-text">《C++ Primer 中文版（第4版）》学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章_快速入门"><span class="toc-number">2.</span> <span class="toc-text">第1章 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_cerr_和_clog"><span class="toc-number">2.1.</span> <span class="toc-text">1. cerr 和 clog</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第2章_变量和基本类型"><span class="toc-number">3.</span> <span class="toc-text">第2章 变量和基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_使用反斜线断行"><span class="toc-number">3.1.</span> <span class="toc-text">1. 使用反斜线断行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_C++两种初始化方式"><span class="toc-number">3.2.</span> <span class="toc-text">2. C++两种初始化方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_const_对象默认为文件的局部变量"><span class="toc-number">3.3.</span> <span class="toc-text">3. const 对象默认为文件的局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_引用"><span class="toc-number">3.4.</span> <span class="toc-text">4. 引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_枚举类型"><span class="toc-number">3.5.</span> <span class="toc-text">5. 枚举类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_class_和_struct_的区别"><span class="toc-number">3.6.</span> <span class="toc-text">6. class 和 struct 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_头文件"><span class="toc-number">3.7.</span> <span class="toc-text">7. 头文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第3章_标准库类型"><span class="toc-number">4.</span> <span class="toc-text">第3章 标准库类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_using_声明"><span class="toc-number">4.1.</span> <span class="toc-text">1. using 声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_getline_函数"><span class="toc-number">4.2.</span> <span class="toc-text">2. getline 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_string::size_type_类型"><span class="toc-number">4.3.</span> <span class="toc-text">3. string::size_type 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_string_类的“+”运算符"><span class="toc-number">4.4.</span> <span class="toc-text">4. string 类的“+”运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_string_下标"><span class="toc-number">4.5.</span> <span class="toc-text">5. string 下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_cctype_中的函数"><span class="toc-number">4.6.</span> <span class="toc-text">6. cctype 中的函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_建议：采用C_标准库头文件的C++_版本"><span class="toc-number">4.7.</span> <span class="toc-text">7. 建议：采用C 标准库头文件的C++ 版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-_标准库_vector_类型"><span class="toc-number">4.8.</span> <span class="toc-text">8. 标准库 vector 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-_vector_对象的操作"><span class="toc-number">4.9.</span> <span class="toc-text">9. vector 对象的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-_vector_对象的_size()_方法"><span class="toc-number">4.10.</span> <span class="toc-text">10. vector 对象的 size() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-_vector_的下标操作"><span class="toc-number">4.11.</span> <span class="toc-text">11. vector 的下标操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-_vector_下标操作不添加元素"><span class="toc-number">4.12.</span> <span class="toc-text">12. vector 下标操作不添加元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-_迭代器_iterator"><span class="toc-number">4.13.</span> <span class="toc-text">13. 迭代器 iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-_begin_和_end_操作"><span class="toc-number">4.14.</span> <span class="toc-text">14. begin 和 end 操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-_vector_迭代器的自增和解引用运算"><span class="toc-number">4.15.</span> <span class="toc-text">15. vector 迭代器的自增和解引用运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-_迭代器的比较操作"><span class="toc-number">4.16.</span> <span class="toc-text">16. 迭代器的比较操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-_迭代器应用的程序示例"><span class="toc-number">4.17.</span> <span class="toc-text">17. 迭代器应用的程序示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-_const_iterator"><span class="toc-number">4.18.</span> <span class="toc-text">18. const_iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-_迭代器的算术操作"><span class="toc-number">4.19.</span> <span class="toc-text">19. 迭代器的算术操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-_标准库_bitset_类型"><span class="toc-number">4.20.</span> <span class="toc-text">20. 标准库 bitset 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-_用_string_对象初始化_bitset_对象"><span class="toc-number">4.21.</span> <span class="toc-text">21. 用 string 对象初始化 bitset 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-_bitset_对象上的操作"><span class="toc-number">4.22.</span> <span class="toc-text">22. bitset 对象上的操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第4章_数组和指针"><span class="toc-number">5.</span> <span class="toc-text">第4章 数组和指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_现代_C++_程序应避免使用低级的数组和指针"><span class="toc-number">5.1.</span> <span class="toc-text">1. 现代 C++ 程序应避免使用低级的数组和指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_不允许数组直接复制和赋值"><span class="toc-number">5.2.</span> <span class="toc-text">2. 不允许数组直接复制和赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_数组下标的类型为_size_t"><span class="toc-number">5.3.</span> <span class="toc-text">3. 数组下标的类型为 size_t</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_定义指针的写法"><span class="toc-number">5.4.</span> <span class="toc-text">4. 定义指针的写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_指针和引用的区别"><span class="toc-number">5.5.</span> <span class="toc-text">5. 指针和引用的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_指针和_const_限定符"><span class="toc-number">5.6.</span> <span class="toc-text">6. 指针和 const 限定符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_指针和_typedef"><span class="toc-number">5.7.</span> <span class="toc-text">7. 指针和 typedef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-_允许动态分配空数组"><span class="toc-number">5.8.</span> <span class="toc-text">8. 允许动态分配空数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-_动态空间的释放"><span class="toc-number">5.9.</span> <span class="toc-text">9. 动态空间的释放</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第5章_表达式"><span class="toc-number">6.</span> <span class="toc-text">第5章 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_零值指针的删除"><span class="toc-number">6.1.</span> <span class="toc-text">1. 零值指针的删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_在_delete_之后，重设指针的值"><span class="toc-number">6.2.</span> <span class="toc-text">2. 在 delete 之后，重设指针的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_强制类型转换"><span class="toc-number">6.3.</span> <span class="toc-text">3. 强制类型转换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第6章_语句"><span class="toc-number">7.</span> <span class="toc-text">第6章 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_throw_表达式（抛出异常）"><span class="toc-number">7.1.</span> <span class="toc-text">1. throw 表达式（抛出异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_try_块"><span class="toc-number">7.2.</span> <span class="toc-text">2. try 块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_异常类的_what()_方法"><span class="toc-number">7.3.</span> <span class="toc-text">3. 异常类的 what() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_函数在寻找处理代码的过程中退出"><span class="toc-number">7.4.</span> <span class="toc-text">4. 函数在寻找处理代码的过程中退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_标准异常"><span class="toc-number">7.5.</span> <span class="toc-text">5. 标准异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_使用预处理器进行调试"><span class="toc-number">7.6.</span> <span class="toc-text">6. 使用预处理器进行调试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第7章_函数"><span class="toc-number">8.</span> <span class="toc-text">第7章 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_指针形参"><span class="toc-number">8.1.</span> <span class="toc-text">1. 指针形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_引用形参"><span class="toc-number">8.2.</span> <span class="toc-text">2. 引用形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_const_形参"><span class="toc-number">8.3.</span> <span class="toc-text">3. const 形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-"><span class="toc-number">8.4.</span> <span class="toc-text">4.</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>本文为在阅读《C++ Primer 中文版（第4版）》的过程中记录的知识点。</p>
+<a id="more"></a>
+
+<!--style type="text/css">
+p{text-indent:2em}
+</style-->
+
+<h1 id="《C++_Primer_中文版（第4版）》学习记录">《C++ Primer 中文版（第4版）》学习记录</h1>
+<hr>
+<p>本书是久负盛名的C++经典教程引，其内容是C++大师Stanley B. Lippman丰富的实践经验和C++标准委员会原负责人Josée Lajoie对C++标准深入理解的完美结合，已经帮助全球无数程序员学会了C++。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>书    名</td>
+<td>C++ Primer 中文版（第4版）</td>
+</tr>
+<tr>
+<td>作    者</td>
+<td>Stanley B. Lippman, Josée Lajoie, Barbara E. Moo</td>
+</tr>
+<tr>
+<td>原版名称</td>
+<td>C++ Primer, Fourth Edition</td>
+</tr>
+<tr>
+<td>译    者</td>
+<td>李师贤 蒋爱军 梅晓勇 林瑛</td>
+</tr>
+<tr>
+<td>ISBN</td>
+<td>7-115-14554-7</td>
+</tr>
+<tr>
+<td>类    别</td>
+<td>C++语言入门书籍</td>
+</tr>
+<tr>
+<td>页    数</td>
+<td>745</td>
+</tr>
+<tr>
+<td>定    价</td>
+<td>99.00元</td>
+</tr>
+<tr>
+<td>出 版 社</td>
+<td>人民邮电出版社</td>
+</tr>
+<tr>
+<td>出版时间</td>
+<td>2006年3月</td>
+</tr>
+<tr>
+<td>装    帧</td>
+<td>平装</td>
+</tr>
+<tr>
+<td>开    本</td>
+<td>800×1000 1/16</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><code>2014-10-26</code></p>
+<h1 id="第1章_快速入门">第1章 快速入门</h1>
+<h2 id="1-_cerr_和_clog">1. cerr 和 clog</h2>
+<p>P5<br>C++标准输出除了 <code>cout</code> 之外，还有 <code>cerr</code> 和 <code>clog</code>。<br><code>cerr</code> 用来输出警告和错误信息；<br><code>clog</code> 用来输出程序执行的一般信息。<br>具体在输出的时候，三者是有区别的：</p>
+<ol>
+<li><code>cout</code> 经过缓冲后输出，默认情况下是显示器。这是一个被缓冲的输出，是标准输出，并且可以重新定向；</li>
+<li><code>cerr</code> 不经过缓冲而直接输出，一般用于迅速输出出错信息，是标准错误，默认情况下被关联到标准输出流，但它不被缓冲，也就说错误消息可以直接发送到显示器，而无需等到缓冲区或者新的换行符时，才被显示。一般情况下不被重定向；</li>
+<li><code>clog</code> 流也是标准错误流,作用和 <code>cerr</code> 一样,区别在于 <code>cerr</code> 不经过缓冲区,直接向显示器输出信息,而 <code>clog</code> 中的信息存放在缓冲区,缓冲区满或者遇到 <code>endl</code> 时才输出。</li>
+</ol>
+<blockquote>
+<p><a href="http://blog.csdn.net/garfield2005/article/details/7639833" target="_blank" rel="external">C++中cout和cerr的区别？ - Garfield2005的专栏 - 博客频道 - CSDN.NET</a></p>
+</blockquote>
+<h1 id="第2章_变量和基本类型">第2章 变量和基本类型</h1>
+<h2 id="1-_使用反斜线断行">1. 使用反斜线断行</h2>
+<p>P36<br>若要在单词中间断开一行，可以使用反斜线 <code>\</code> 实现。<br>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cou\</div><div class="line">t &lt;&lt; <span class="string">"Hello!"</span> &lt;&lt; endl;</div></pre></td></tr></table></figure>
+
+<p>等价于：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello!"</span> &lt;&lt; endl;</div></pre></td></tr></table></figure>
+
+<p>或者反斜线 <code>\</code> 可以用来断开长字符串。<br>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cout &lt;&lt; <span class="string">"Hello \</span></div><div class="line">World!<span class="string">" &lt;&lt; endl;</span></div></pre></td></tr></table></figure>
+
+<p>等价于：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World!"</span> &lt;&lt; endl;</div></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>反斜线 <code>\</code> 必须是该行的尾字符——不允许其后有注释或空格。同样，后继行行首的任意空格和制表符都是字符串的一部分，因此，长字符串的后继行不能有正常的缩进。</p>
+<h2 id="2-_C++两种初始化方式">2. C++两种初始化方式</h2>
+<p>P42</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">int num </span>=<span class="string"> 6;</span></div></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> num(<span class="number">6</span>);</div></pre></td></tr></table></figure>
+
+<h2 id="3-_const_对象默认为文件的局部变量">3. const 对象默认为文件的局部变量</h2>
+<p>P50<br>某文件中的const类型全局变量不能被其他文件中的程序访问，除非将其指定为extern。</p>
+<h2 id="4-_引用">4. 引用</h2>
+<p>P52<br>将普通的引用绑定到const对象时不合法的。<br>非const引用只能绑定到与该引用同类型的对象；<br>const引用则可以绑定到不同但相关的类型的对象或绑定到右值。<br>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> dval = <span class="number">3.14</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &ri = dval;</div></pre></td></tr></table></figure>
+
+<p>编译器会把这些代码转换成如下形式的编码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> temp = dval;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &ri = temp;</div></pre></td></tr></table></figure>
+
+<p>因此，修改 <code>ri</code> 的值并不会使 <code>dval</code> 发生改变。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &r = <span class="number">6</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> &r2 = r + <span class="number">1</span>;</div></pre></td></tr></table></figure>
+
+<h2 id="5-_枚举类型">5. 枚举类型</h2>
+<p>P54</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">enum</span> <span class="title">Points</span> { point2d = <span class="number">2</span>, point2w,</div><div class="line">              point3d = <span class="number">3</span>, point3w };</div></pre></td></tr></table></figure>
+
+<p>这样定义的话，point2d = 2, point2w = 3, point3d = 3, point3w = 4。</p>
+<h2 id="6-_class_和_struct_的区别">6. class 和 struct 的区别</h2>
+<p>P57<br>用 <code>class</code> 和 <code>struct</code> 关键字定义类的唯一区别在于默认访问级别：<br><code>class</code> 的成员默认为 <code>private</code>，而 <code>struct</code> 的成员默认为 <code>private</code>。</p>
+<h2 id="7-_头文件">7. 头文件</h2>
+<p>P59<br>一般类定义都放在头文件中。<br>头文件用于声明，不应含有变量或函数的定义。但有3个例外，即可以在头文件中定义以下3项：</p>
+<ul>
+<li>类</li>
+<li>值在编译时就已知道的 const 对象（因为 const 对象默认为文件的局部变量）</li>
+<li>inline 函数</li>
+</ul>
+<h1 id="第3章_标准库类型">第3章 标准库类型</h1>
+<h2 id="1-_using_声明">1. using 声明</h2>
+<p>P69<br>头文件中应避免使用 <code>using</code> 声明，如果需要使用某个命名空间中的名字，应使用完全限定的形式，如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">std</span>::<span class="built_in">string</span> str;</div></pre></td></tr></table></figure>
+
+<p>而不能：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="built_in">string</span> str;</div></pre></td></tr></table></figure>
+
+<p>或</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</div><div class="line"><span class="built_in">string</span> str;</div></pre></td></tr></table></figure>
+
+<h2 id="2-_getline_函数">2. getline 函数</h2>
+<p>P72<br><code>cin</code> 不能接受带有空格的字符串，可以用 <code>getline</code> 函数解决这个问题。<br>用法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">string <span class="value">line</span>;</div><div class="line"><span class="function">getline(cin, line)</span>;</div><div class="line">cout &lt;&lt; <span class="value">line</span> &lt;&lt; endl;</div></pre></td></tr></table></figure>
+
+<h2 id="3-_string::size_type_类型">3. string::size_type 类型</h2>
+<p>P73<br><code>string</code> 类类型和许多其他库类型都定义了一些配套类型(companion type)。通过这些配套类型，库类型的使用就能与机器无关(machine-independent)。<code>size_type</code> 就是这些配套类型中的一种。它定义为与 <code>unsigned</code> 型(<code>unsigned int</code> 或 <code>unsigned long</code>)具有相同的含义，而且可以保证足够大能够存储任意 <code>string</code> 对象的长度。为了使用由 <code>string</code> 类型定义的 <code>size_type</code> 类型，程序员必须加上作用域操作符来说明所使用的 <code>size_type</code> 类型是由 <code>string</code> 类定义的。<br><strong>特别注意：</strong>不要把 <code>size()</code> 的返回值赋给 <code>int</code> 变量。</p>
+<h2 id="4-_string_类的“+”运算符">4. string 类的“+”运算符</h2>
+<p>P75<br>当进行 <code>string</code> 对象和字符串字面值混合连接操作时，<code>+</code> 操作符的左右操作数必须至少有一个是string类型的。<br>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">srting s1 = <span class="string">"Hello"</span>;</div><div class="line"><span class="keyword">string</span> s2 = <span class="string">"world!"</span>;</div><div class="line"><span class="keyword">string</span> s3 = s1 + <span class="string">","</span>; <span class="comment">//合法</span></div><div class="line"><span class="keyword">string</span> s4 = <span class="string">"hello"</span> + <span class="string">","</span>; <span class="comment">//不合法</span></div><div class="line"><span class="keyword">string</span> s5 = s1 + <span class="string">","</span> + <span class="string">"world!"</span>; <span class="comment">//合法</span></div><div class="line"><span class="keyword">string</span> s6 = <span class="string">"hello"</span> + <span class="string">","</span> + s2; <span class="comment">//不合法</span></div></pre></td></tr></table></figure>
+
+<p>其中，s5 的初始化方法显得有点不可思议，但这种用法和标准输入输出的串联效果是一样的。本例中，<code>string</code> 标准库定义加操作返回一个 <code>string</code> 对象。这样，在对s5进行初始化时，子表达式 <code>s1 + &quot;,&quot;</code> 将返回一个新 <code>string</code> 对象，后者再和字面值 <code>“world!”</code> 连接。</p>
+<h2 id="5-_string_下标">5. string 下标</h2>
+<p>P75<br><code>string</code> 类型通过下标操作符 <code>[]</code> 来访问 <code>string</code> 对象中的单个字符。下标操作符需要取一个 <code>size_type</code> 类型的值，来标明要访问字符的位置。<br><code>string</code> 类型下标操作可用作左值。</p>
+<p><code>2014-10-27</code></p>
+<h2 id="6-_cctype_中的函数">6. cctype 中的函数</h2>
+<p>P77</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isalnum(c)</code></td>
+<td>如果 c 是字母或数字，则为 True。</td>
+</tr>
+<tr>
+<td><code>isalpha(c)</code></td>
+<td>如果 c 是字母，则为 true。</td>
+</tr>
+<tr>
+<td><code>iscntrl(c)</code></td>
+<td>如果 c 是控制字符，则为 true。</td>
+</tr>
+<tr>
+<td><code>isdigit(c)</code></td>
+<td>如果 c 是数字，则为 true。</td>
+</tr>
+<tr>
+<td><code>isgraph(c)</code></td>
+<td>如果 c 不是空格，但可打印，则为 true。</td>
+</tr>
+<tr>
+<td><code>islower(c)</code></td>
+<td>如果 c 是小写字母，则为 true。</td>
+</tr>
+<tr>
+<td><code>isprint(c)</code></td>
+<td>如果 c 是可打印的字符，则为 true。</td>
+</tr>
+<tr>
+<td><code>ispunct(c)</code></td>
+<td>如果 c 是标点符号，则 true。</td>
+</tr>
+<tr>
+<td><code>isspace(c)</code></td>
+<td>如果 c 是空白字符，则为 true。</td>
+</tr>
+<tr>
+<td><code>isupper(c)</code></td>
+<td>如果 c 是大写字母，则 true。</td>
+</tr>
+<tr>
+<td><code>isxdigit(c)</code></td>
+<td>如果 c 是十六进制数，则为 true。</td>
+</tr>
+<tr>
+<td><code>tolower(c)</code></td>
+<td>如果 c 大写字母，返回其小写字母形式，否则直接返回 c。</td>
+</tr>
+<tr>
+<td><code>toupper(c)</code></td>
+<td>如果 c 是小写字母，则返回其大写字母形式，否则直接返回 c。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-_建议：采用C_标准库头文件的C++_版本">7. 建议：采用C 标准库头文件的C++ 版本</h2>
+<p>P78<br>C++ 标准库除了定义了一些特定于 C++ 的设施外，还包括 C 标准库。C++ 中的头文件 <code>cctype</code> 其实就是利用了 C 标准库函数，这些库函数就定义在 C 标准库的 <code>ctype.h</code> 头文件中。<br>C 标准库头文件命名形式为 <code>name</code> 而 C++ 版本则命名为 <code>cname</code>，少了后缀 <code>.h</code> 而在头文件名前加了 <code>c</code> 表示这个头文件源自 C 标准库。因此，<code>cctype</code> 与 <code>ctype.h</code> 文件的内容是一样的，只是采用了更适合 C++ 程序的形式。特别地，<code>cname</code> 头文件中定义的名字都定义在命名空间 <code>std</code> 内，而 <code>.h</code> 版本中的名字却不是这样。<br>通常，C++ 程序中应采用 <code>cname</code> 这种头文件的版本，而不采用 <code>name.h</code> 版本，这样，标准库中的名字在命名空间 <code>std</code> 中保持一致。使用 <code>.h</code> 版本会给程序员带来负担，因为他们必须记得哪些标准库名字是从 C 继承来的，而哪些是 C++ 所特有的。 </p>
+<h2 id="8-_标准库_vector_类型">8. 标准库 vector 类型</h2>
+<p>P78</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</div><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> ivec; <span class="comment">// ivec holds objects of type int</span></div><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;Sales_item&gt;</span> Sales_vec; <span class="comment">// holds Sales_items</span></div></pre></td></tr></table></figure>
+
+<p><code>vector</code> 不是一种数据类型，而只是一个类模板，可用来定义任意多种数据类型。<code>vector</code> 类型的每一种都指定了其保存元素的类型。因此，<code>vector&lt;int&gt;</code> 和 <code>vector&lt;string&gt;</code> 都是数据类型。</p>
+<p><strong>初始化vector</strong></p>
+<table>
+<thead>
+<tr>
+<th>初始化方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vector&lt;T&gt; v1;</code></td>
+<td>vector 保存类型为 T 对象。默认构造函数 v1 为空。</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v2(v1);</code></td>
+<td>v2 是 v1 的一个副本。</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v3(n, i);</code></td>
+<td>v3 包含 n 个值为 i 的元素。</td>
+</tr>
+<tr>
+<td><code>vector&lt;T&gt; v4(n);</code></td>
+<td>v4 含有值初始化的元素的 n 个副本。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-_vector_对象的操作">9. vector 对象的操作</h2>
+<p>P81</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>v.empty()</code></td>
+<td>如果 v 为空，则返回 true，否则返回 false。</td>
+</tr>
+<tr>
+<td><code>v.size()</code></td>
+<td>返回 v 中元素的个数。</td>
+</tr>
+<tr>
+<td><code>v.push_back(t)</code></td>
+<td>在 v 的末尾增加一个值为 t 的元素。</td>
+</tr>
+<tr>
+<td><code>v[n]</code></td>
+<td>返回 v 中位置为 n 的元素。</td>
+</tr>
+<tr>
+<td><code>v1 = v2</code></td>
+<td>把 v1 的元素替换为 v2 中元素的副本。</td>
+</tr>
+<tr>
+<td><code>v1 == v2</code></td>
+<td>如果 v1 与 v2 相等，则返回 true。</td>
+</tr>
+<tr>
+<td><code>!=, &lt;, &lt;=, &gt;, &gt;=</code></td>
+<td>保持这些操作符惯有的含义。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-_vector_对象的_size()_方法">10. vector 对象的 size() 方法</h2>
+<p>P81<br>成员函数 <code>size()</code> 返回相应 <code>vector</code> 类定义的 <code>size_type</code> 的值。<br>使用 <code>size_type</code> 类型时，必须指出该类型是在哪里定义的。<br><code>vector</code> 类型总是包括 <code>vector</code> 的元素类型：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::size_type <span class="comment">// ok</span></div><div class="line"><span class="built_in">vector</span>::size_type      <span class="comment">// error</span></div></pre></td></tr></table></figure>
+
+<h2 id="11-_vector_的下标操作">11. vector 的下标操作</h2>
+<p>P81<br><code>vector</code> 的下标操作类似于 <code>string</code> 类型的下标操作。<br>和 <code>string</code> 类型的下标操作符一样，<code>vector</code> 下标操作的结果也可以用作左值。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reset the elements in the vector to zero</span></div><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::size_type ix = <span class="number">0</span>; ix != ivec.size(); ++ix)</div><div class="line">{</div><div class="line">    ivec[ix] = <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><strong>关键概念：安全的泛型编程</strong><br>习惯于 C 或 Java 编程的 C++ 程序员可能会觉得难以理解，for 循环的判断条件用 <code>!=</code> 而不是用 <code>&lt;</code> 来测试 <code>vector</code> 下标值是否越界。C 程序员难以理解的还有，上例中没有在 <code>for</code> 循环之前就调用 <code>size</code> 成员函数并保存其返回的值，而是在 <code>for</code> 语句头中调用 <code>size</code> 成员函数。<br>C++ 程序员习惯于优先选用 <code>!=</code> 而不是 &lt; 来编写循环判断条件。在上例中，选用或不用某种操作符并没有特别的取舍理由。学习完本书第二部分的泛型编程后，你将会明白这种习惯的合理性。<br>调用 <code>size</code> 成员函数而不保存它返回的值，在这个例子中同样不是必需的，但这反映了一种良好的编程习惯。在 C++ 中，有些数据结构（如 <code>vector</code>）可以动态增长。上例中循环仅需要读取元素，而不需要增加新的元素。但是，循环可以容易地增加新元素，如果确实增加了新元素的话，那么测试已保存的 <code>size</code> 值作为循环的结束条件就会有问题，因为没有将新加入的元素计算在内。所以我们倾向于在每次循环中测试 <code>size</code> 的当前值，而不是在进入循环前，存储 <code>size</code> 值的副本。<br>我们将在第七章学习到，C++ 中有些函数可以声明为内联（inline）函数。编译器遇到内联函数时就会直接扩展相应代码，而不是进行实际的函数调用。像 <code>size</code> 这样的小库函数几乎都定义为内联函数，所以每次循环过程中调用它的运行时代价是比较小的。</p>
+<h2 id="12-_vector_下标操作不添加元素">12. vector 下标操作不添加元素</h2>
+<p>P82<br>初学 C++ 的程序员可能会认为 <code>vector</code> 的下标操作可以添加元素，其实不然：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> ivec; <span class="comment">// empty vector</span></div><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::size_type ix = <span class="number">0</span>; ix != <span class="number">10</span>; ++ix)</div><div class="line">{</div><div class="line">    ivec[ix] = ix; <span class="comment">// disaster: ivec has no elements</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>上述程序试图在 <code>ivec</code> 中插入 10 个新元素，元素值依次为 0 到 9 的整数。但是，这里 <code>ivec</code> 是空的 <code>vector</code> 对象，而且下标只能用于获取已存在的元素。<br>这个循环的正确写法应该是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::size_type ix = <span class="number">0</span>; ix != <span class="number">10</span>; ++ix)</div><div class="line">{</div><div class="line">    ivec.push_back(ix); <span class="comment">// ok: adds new element with value ix</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>必须是已存在的元素才能用下标操作符进行索引。通过下标操作进行赋值时，不会添加任何元素。</p>
+<h2 id="13-_迭代器_iterator">13. 迭代器 iterator</h2>
+<p>P84<br>标准库为每一种标准容器（包括 <code>vector</code>）定义了一种迭代器类型。迭代器类型提供了比下标操作更通用化的方法：所有的标准库容器都定义了相应的迭代器类型，而只有少数的容器支持下标操作。因为迭代器对所有的容器都适用，现代 C++ 程序更倾向于使用迭代器而不是下标操作访问容器元素，即使对支持下标操作的 <code>vector</code> 类型也是这样。<br>每种容器类型都定义了自己的迭代器类型，如 <code>vector</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator iter;</div></pre></td></tr></table></figure>
+
+<h2 id="14-_begin_和_end_操作">14. begin 和 end 操作</h2>
+<p>P84<br>每种容器都定义了一对命名为 <code>begin</code> 和 <code>end</code> 的函数，用于返回迭代器。如果容器中有元素的话，由 <code>begin</code> 返回的迭代器指向第一个元素：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator iter = ivec.begin();</div></pre></td></tr></table></figure>
+
+<p>上述语句把 <code>iter</code> 初始化为由名为 <code>vector</code> 操作返回的值。假设 <code>vector</code> 不空，初始化后，<code>iter</code> 即指该元素为 <code>ivec[0]</code>。<br>由 <code>end</code> 操作返回的迭代器指向 <code>vector</code> 的“<strong>末端元素的下一个</strong>”。通常称为“<strong>超出末端迭代器</strong>”（off-the-end iterator）。表明它指向了一个不存在的元素。<br>如果 <code>vector</code> 为空，<code>begin</code> 返回的迭代器与 <code>end</code> 返回的迭代器相同。 </p>
+<h2 id="15-_vector_迭代器的自增和解引用运算">15. vector 迭代器的自增和解引用运算</h2>
+<p>P85<br>解引用操作符返回迭代器当前所指向的元素。<br>自增操作符向前移动迭代器指向容器中下一个元素。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator iter = ivec.begin();</div><div class="line">*iter = <span class="number">0</span>; <span class="comment">// 相当于ivec[0] = 0;</span></div><div class="line">*(++iter) = <span class="number">0</span>; <span class="comment">// 相当于ivec[1] = 0;</span></div></pre></td></tr></table></figure>
+
+<h2 id="16-_迭代器的比较操作">16. 迭代器的比较操作</h2>
+<p>P85<br>用 <code>==</code> 或 <code>!=</code> 操作符来比较两个迭代器，如果两个迭代器对象指向同一个元素，则它们相等，否则就不相等。</p>
+<h2 id="17-_迭代器应用的程序示例">17. 迭代器应用的程序示例</h2>
+<p>P85</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// reset all the elements in ivec to 0</span></div><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::size_type ix = <span class="number">0</span>; ix != ivec.size(); ++ix)</div><div class="line">{</div><div class="line">    ivec[ix] = <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>用迭代器实现：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// equivalent loop using iterators to reset all the elements in ivec to 0 </span></div><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator iter = ivec.begin(); iter != ivec.end(); ++iter)</div><div class="line">{</div><div class="line">    *iter = <span class="number">0</span>; <span class="comment">// set element to which iter refers to 0</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<h2 id="18-_const_iterator">18. const_iterator</h2>
+<p>P86<br>每种容器类型还定义了一种名为 <code>const_iterator</code> 的类型，该类型只能用于读取容器内元素，但不能改变其值。<br>对 <code>const_iterator</code> 类型解引用时，则可以得到一个指向 <code>const</code> 对象的引用，如同任何常量一样，该对象不能进行重写。<br>如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// use const_iterator because we won't change the elements</span></div><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;</span>::const_iterator iter = text.begin(); iter != text.end(); ++iter)</div><div class="line">{</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; *iter &lt;&lt; endl; <span class="comment">// print each element in text</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="stl_container"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;</span>::const_iterator iter = text.begin(); iter != text.end(); ++ iter)</div><div class="line">{</div><div class="line">    *iter = <span class="string">" "</span>; <span class="comment">// error: *iter is const</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p><strong>不要把 <code>const_iterator</code> 对象与 <code>const</code> 的 <code>iterator</code> 对象混淆起来。</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span> nines(<span class="number">10</span>, <span class="number">9</span>); <span class="comment">// cannot change elementsin nines</span></div><div class="line"><span class="comment">// error: cit2 could change the element it refers to and nines is</span></div><div class="line"><span class="keyword">const</span> <span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator cit2 = nines.begin();</div><div class="line"><span class="comment">// ok: it can't change an element value, so it can be usedwith a</span></div><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::const_iterator it = nines.begin();</div><div class="line">*it = <span class="number">10</span>; <span class="comment">// error: *it is const</span></div><div class="line">++it; <span class="comment">// ok: it isn't const so we can change its value</span></div></pre></td></tr></table></figure>
+
+<h2 id="19-_迭代器的算术操作">19. 迭代器的算术操作</h2>
+<p>P87</p>
+<ul>
+<li><code>iter + n (iter - n)</code><br>可以对迭代器对象加上或减去一个整形值。这样做将产生一个新的迭代器，其位置在 <code>iter</code> 所指元素之前（加）或之后（减） n 个元素的位置。<br>加或减之后的结果必须指向 <code>iter</code> 所指 <code>vector</code> 中的某个元素，或者是 <code>vector</code> 末端的后一个元素。加上或减去的值的类型应该是 <code>vector</code> 的 <code>size_type</code> 或 <code>difference_type</code> 类型（参考下面的解释）。</li>
+<li><code>iter1 - iter2</code><br>该表达式用来计算两个迭代器对象的距离，该距离是名为 <code>difference_type</code> 的 <code>signed</code> 类型 <code>size_type</code> 的值，这里的 <code>difference_type</code> 是 <code>signed</code> 类型，因为减法运算可能产生负数的结果。该类型可以保证足够大以存储任何两个迭代器对象间的距离。<br><code>iter1</code> 与 <code>iter2</code> 两者必须都指向同一 <code>vector</code> 中的元素，或者指向 <code>vector</code> 末端之后的下一个元素。</li>
+</ul>
+<p>如：<br>下面语句直接定位于 <code>vector</code> 中间元素：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="stl_container"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;</span>::iterator mid = vi.begin() + vi.size() / <span class="number">2</span>;</div></pre></td></tr></table></figure>
+
+<p><strong>任何改变 <code>vector</code> 长度的操作都会使已存在的迭代器失效。例如，在调用 <code>push_back</code> 之后，就不能再信赖指向 <code>vector</code> 的迭代器的值了。</strong></p>
+<h2 id="20-_标准库_bitset_类型">20. 标准库 bitset 类型</h2>
+<p>P88<br>有些程序要处理二进制位的有序集，每个位可能包含 0（关）1（开）值。位是用来保存一组项或条件的 yes/no 信息（有时也称标志）的简洁方法。标准库提供的 <code>bitset</code> 类简化了位集的处理。要使用 <code>bitset</code> 类就必须包含相关的头文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">#include &lt;bitset&gt;</span></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">bitset</span>;</div></pre></td></tr></table></figure>
+
+<p><strong><code>bitset</code> 对象的定义和初始化</strong></p>
+<table>
+<thead>
+<tr>
+<th>初始化方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bitset&lt;n&gt; b;</code></td>
+<td>b 有 n 位，每位都 0</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(u);</code></td>
+<td>b 是 unsigned long 型 u 的一个副本</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(s);</code></td>
+<td>b 是 string 对象 s 中含有的位串的副本</td>
+</tr>
+<tr>
+<td><code>bitset&lt;n&gt; b(s, pos, n);</code></td>
+<td>b 是 s 中从位置 pos 开始的 n 个位的副本。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="21-_用_string_对象初始化_bitset_对象">21. 用 string 对象初始化 bitset 对象</h2>
+<p>P89<br>当用 <code>string</code> 对象初始化 <code>bitset</code> 对象时，<code>string</code> 对象直接表示为位模式。<br>从 <code>string</code> 对象读入位集的顺序是从右向左：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> strval(<span class="string">"1100"</span>);</div><div class="line"><span class="stl_container"><span class="built_in">bitset</span>&lt;32&gt;</span> bitvec4(strval); <span class="comment">//bitvec4 的位模式中第 2 和 3 的位置为 1，其余位置都为 0。</span></div></pre></td></tr></table></figure>
+
+<p>如果 <code>string</code> 对象的字符个数小于 <code>bitset</code> 类型的长度，则高阶位置为 0。<br><code>string</code> 对象和 <code>bitsets</code> 对象之间是反向转化的：<code>string</code> 对象的最右边字符（即下标最大的那个字符）用来初始化 <code>bitset</code> 对象的低阶位（即下标为 0 的位）。<br><strong>当用 <code>string</code> 对象初始化 <code>bitset</code> 对象时，记住这一差别很重要</strong>。<br>不一定要把整个 <code>string</code> 对象都作为 <code>bitset</code> 对象的初始值。相反，可以只用某个子串作为初始值：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">string</span> str(<span class="string">"1111111000000011001101"</span>);</div><div class="line"><span class="stl_container"><span class="built_in">bitset</span>&lt;32&gt;</span> bitvec5(str, <span class="number">5</span>, <span class="number">4</span>); <span class="comment">// 4 bits starting at str[5], 1100</span></div><div class="line"><span class="stl_container"><span class="built_in">bitset</span>&lt;32&gt;</span> bitvec6(str, str.size() - <span class="number">4</span>); <span class="comment">// use last 4 characters</span></div></pre></td></tr></table></figure>
+
+<h2 id="22-_bitset_对象上的操作">22. bitset 对象上的操作</h2>
+<p>P90</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>b.any()</code></td>
+<td>b 中是否存在置为 1 的二进制位？</td>
+</tr>
+<tr>
+<td><code>b.none()</code></td>
+<td>b 中不存在置为 1 的二进制位吗？</td>
+</tr>
+<tr>
+<td><code>b.count()</code></td>
+<td>b 中置为 1 的二进制位的个数</td>
+</tr>
+<tr>
+<td><code>b.size()</code></td>
+<td>b 中二进制位的个数</td>
+</tr>
+<tr>
+<td><code>b[pos]</code></td>
+<td>访问 b 中在 pos 处二进制位</td>
+</tr>
+<tr>
+<td><code>b.test(pos)</code></td>
+<td>b 中在 pos 处的二进制位置为 1 么？</td>
+</tr>
+<tr>
+<td><code>b.set()</code></td>
+<td>把 b 中所有二进制位都置为 1</td>
+</tr>
+<tr>
+<td><code>b.set(pos)</code></td>
+<td>把 b 中在 pos 处的二进制位置为 1</td>
+</tr>
+<tr>
+<td><code>b.reset()</code></td>
+<td>把 b 中所有二进制位都置为 0</td>
+</tr>
+<tr>
+<td><code>b.reset(pos)</code></td>
+<td>把 b 中在 pos 处的二进制位置为 0</td>
+</tr>
+<tr>
+<td><code>b.flip()</code></td>
+<td>把 b 中所有二进制位逐位取反</td>
+</tr>
+<tr>
+<td><code>b.flip(pos)</code></td>
+<td>把 b 中在 pos 处的二进制位取反</td>
+</tr>
+<tr>
+<td><code>b.to_ulong()</code></td>
+<td>用 b 中同样的二进制位返回一个 unsigned long 值</td>
+</tr>
+<tr>
+<td><code>os &lt;&lt; b</code></td>
+<td>把 b 中的位集输出到 os 流</td>
+</tr>
+</tbody>
+</table>
+<p><code>count</code> 和 <code>size</code> 操作的返回类型是标准库中命名为 <code>size_t</code> 类型。<code>size_t</code> 类型定义在 <code>cstddef</code> 头文件中，该文件是 C 标准库的头文件 <code>stddef.h</code> 的C++ 版本。它是一个与机器相关的 <code>unsigned</code> 类型，其大小足以保证存储内在中对象的大小。</p>
+<h1 id="第4章_数组和指针">第4章 数组和指针</h1>
+<h2 id="1-_现代_C++_程序应避免使用低级的数组和指针">1. 现代 C++ 程序应避免使用低级的数组和指针</h2>
+<p>P95<br>现代 C++ 程序应尽量使用 vector 和迭代器类型，而避免使用低级的数组和指针。设计良好的程序只有在<strong>强调速度</strong>时才在类实现的内部使用数组和指针。<br>只有当性能测试表明使用 vector 无法达到必要的速度要求时，才使用数组。</p>
+<h2 id="2-_不允许数组直接复制和赋值">2. 不允许数组直接复制和赋值</h2>
+<p>P98<br>与 <code>vector</code> 不同，一个数组不能用另外一个数组初始化，也不能将一个数组赋值给另一个数组，这些操作都是非法的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> ia[] = {<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>}; <span class="comment">// ok: array of ints</span></div><div class="line"><span class="keyword">int</span> ia2[](ia); <span class="comment">// error: cannot initialize one array with another</span></div><div class="line"><span class="keyword">int</span> main()</div><div class="line">{</div><div class="line">    <span class="keyword">const</span> <span class="keyword">unsigned</span> array_size = <span class="number">3</span>;</div><div class="line">    <span class="keyword">int</span> ia3[array_size]; <span class="comment">// ok: but elements are uninitialized!</span></div><div class="line">    ia3 = ia; <span class="comment">// error: cannot assign one array to another</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>一些编译器允许将数组赋值作为编译器扩展。但是如果希望编写的程序能在不同的编译器上运行，则应该避免使用像数组赋值这类依赖于编译器的非标准功能。 </p>
+<h2 id="3-_数组下标的类型为_size_t">3. 数组下标的类型为 size_t</h2>
+<p>P99</p>
+<h2 id="4-_定义指针的写法">4. 定义指针的写法</h2>
+<p>P101<br>尽量用如下风格：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span> *pstring;</div></pre></td></tr></table></figure>
+
+<p>而不是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span>* pstring;</div></pre></td></tr></table></figure>
+
+<p>第2种指针声明风格容易引起这样的误解：把 <code>string*</code> 理解为一种数据类型，认为在同一声明语句中定义的其他变量也是指向 <code>string</code> 类型对象的指针。然而，语句</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="typename">string</span>* ps1, ps2; // ps1 <span class="keyword">is</span> a pointer <span class="keyword">to</span> <span class="typename">string</span>, ps2is a <span class="typename">string</span></div></pre></td></tr></table></figure>
+
+<p>实际上只把 ps1 定义为指针，而 ps2 并非指针，只是一个普通的 <code>string</code> 对象而已。如果需要在一个声明语句中定义两个指针，必须在每个变量标识符前再加符号 <code>*</code> 声明：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="typename">string</span>* ps1, *ps2; // both ps1 <span class="keyword">and</span> ps2 are pointers <span class="keyword">to</span> <span class="typename">string</span></div></pre></td></tr></table></figure>
+
+<h2 id="5-_指针和引用的区别">5. 指针和引用的区别</h2>
+<p>P105<br>指针和引用之间有两个重要区别：</p>
+<ul>
+<li>引用总是指向某个对象：定义引用时没有初始化是错误的。</li>
+<li>引用赋值修改的是该引用所关联的对象的值，而并不是使引用与另一个对象关联。引用一经初始化，就始终指向同一个特定对象（这就是为什么引用必须在定义时初始化的原因）。</li>
+</ul>
+<h2 id="6-_指针和_const_限定符">6. 指针和 const 限定符</h2>
+<p>P110<br><strong>（1）指向 <code>const</code> 对象的指针</strong><br><strong>C++ 语言强制要求指向 <code>const</code> 对象的指针也必须具有 <code>const</code> 特性。</strong><br>即，如果指针指向 <code>const</code> 对象，则不允许用指针来改变其所指的 <code>const</code> 值。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">double</span> *cptr; <span class="comment">// cptr may point to a double that is const</span></div></pre></td></tr></table></figure>
+
+<p>这里的 <code>cptr</code> 是一个指向 <code>double</code> 类型 <code>const</code> 对象的指针，<code>const</code> 限定了 <code>cptr</code> 指针所指向的对象类型，而并非 <code>cptr</code> 本身。也就是说，<code>cptr</code> 本身并不是 <code>const</code>。在定义时不需要对它进行初始化，如果需要的话，允许给 <code>cptr</code> 重新赋值，使其指向另一个 <code>const</code> 对象。但不能通过 <code>cptr</code> 修改其所指对象的值。<br><strong>允许把非 <code>const</code> 对象的地址赋给指向 <code>const</code> 对象的指针</strong>，例如：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> dval = <span class="number">3.14</span>; <span class="comment">// dval is a double; its value can be changed</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">double</span> *cptr = &dval; <span class="comment">// ok: but can't change dval through cptr</span></div></pre></td></tr></table></figure>
+
+<p><strong>尽管 <code>dval</code> 不是 <code>const</code> 对象，但任何企图通过指针 <code>cptr</code> 修改其值的行为都会导致编译时的错误。</strong><code>cptr</code> 一经定义，就不允许修改其所指对象的值。如果该指针恰好指向非 <code>const</code> 对象时，同样必须遵循这个规则。<br><strong>（2）<code>const</code> 指针</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> errNumb = <span class="number">0</span>;</div><div class="line"><span class="keyword">int</span> *<span class="keyword">const</span> curErr = &errNumb; <span class="comment">// curErr is a constantpointer</span></div></pre></td></tr></table></figure>
+
+<p>与其他 <code>const</code> 量一样，<code>const</code> 指针的值不能修改，这就意味着不能使 <code>curErr</code> 指向其他对象。<br><strong>（3）指向 <code>const</code> 对象的 <code>const</code> 指针</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="reserved">const</span> double pi = <span class="number">3.14159</span>;</div><div class="line"><span class="regexp">//</span> pi_ptr <span class="keyword">is</span> <span class="reserved">const</span> <span class="keyword">and</span> points to a <span class="reserved">const</span> object</div><div class="line"><span class="reserved">const</span> double *<span class="reserved">const</span> pi_ptr = &pi;</div></pre></td></tr></table></figure>
+
+<p>本例中，既不能修改 <code>pi_ptr</code> 所指向对象的值，也不允许修改该指针的指向（即 <code>pi_ptr</code> 中存放的地址值）。</p>
+<h2 id="7-_指针和_typedef">7. 指针和 typedef</h2>
+<p>P112</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">string</span> *pstring;</div><div class="line"><span class="keyword">const</span> pstring cstr;</div></pre></td></tr></table></figure>
+
+<p>等价于：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span> *<span class="keyword">const</span> cstr; <span class="comment">// equivalent to const pstring cstr</span></div></pre></td></tr></table></figure>
+
+<p>而不是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">string</span> *cstr; <span class="comment">// wrong interpretation of const pstring</span></div></pre></td></tr></table></figure>
+
+<p>即，cstr是一个 <code>const</code> 指针，而不是指向 <code>const string</code> 的指针！</p>
+<h2 id="8-_允许动态分配空数组">8. 允许动态分配空数组</h2>
+<p>P118<br>C++ 虽然不允许定义长度为 0 的数组变量，但明确指出，调用 <code>new</code> 动态创建长度为 0 的数组是合法的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span> arr[<span class="number">0</span>]; <span class="comment">// error: cannot define zero-length array</span></div><div class="line"><span class="keyword">char</span> *cp = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">0</span>]; <span class="comment">// ok: but cp can't be dereferenced</span></div></pre></td></tr></table></figure>
+
+<p>用 <code>new</code> 动态创建长度为 0 的数组时，new 返回有效的非零指针。该指针与 <code>new</code> 返回的其他指针不同，不能进行解引用操作，因为它毕竟没有指向任何元素。而允许的操作包括：比较运算，因此该指针能在循环中使用；在该指针上加（减）0；或者减去本身，得 0 值。</p>
+<h2 id="9-_动态空间的释放">9. 动态空间的释放</h2>
+<p>P118</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="operator"><span class="keyword">delete</span> [] pia;</span></div></pre></td></tr></table></figure>
+
+<p>在关键字 <code>delete</code> 和指针之间的空方括号对是必不可少的：它告诉编译器该指针指向的是自由存储区中的数组，而并非单个对象。<br>如果遗漏了空方括号对，这是一个编译器无法发现的错误，将导致程序在运行时出错。 </p>
+<blockquote>
+<p><a href="http://thomaschan1987.blog.163.com/blog/static/216590179201011211350443/" target="_blank" rel="external">delete 和 delete []的用法（转）经典啊！ - 无为的日志 - 网易博客</a></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Point</div><div class="line">{</div><div class="line">    //<span class="keyword">...</span></div><div class="line">}</div><div class="line">Point *p1 = new Point;</div><div class="line">//<span class="keyword">...</span></div><div class="line">delete p1;</div><div class="line">Point *p2 = new Point[<span class="number">2</span>];</div><div class="line">//<span class="keyword">...</span></div><div class="line">delete [] p2;</div></pre></td></tr></table></figure>
+
+<p><strong>动态分配和释放多维数组：</strong><br>（1）第一种，可以直接 <code>[][]</code> 访问。但是内存不连续，不是很推荐使用，除非 <code>M</code> 和 <code>N</code> 都不确定</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>** pNum;<span class="comment">//以int为例</span></div><div class="line">pNum = <span class="keyword">new</span> <span class="keyword">int</span>*[M];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;i++)</div><div class="line">{</div><div class="line">    pNum[i]=<span class="keyword">new</span> <span class="keyword">int</span>[N];</div><div class="line">}</div><div class="line"><span class="comment">//删除的时候是</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;M;j++)</div><div class="line">{</div><div class="line">    <span class="keyword">delete</span> []pNum[i];</div><div class="line">}</div><div class="line"><span class="keyword">delete</span> []pNum;</div></pre></td></tr></table></figure>
+
+<p>（2）第二种，内存连续，但是不能 <code>[][]</code>，最推荐的一种。不能 <code>[][]</code> 但是你可以通过 <code>[i*n+j]</code> 来计算。这种是1维数组转化为2维数组</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int<span class="bullet">* a = new int[M*</span>N];</div><div class="line">// a[<span class="link_label">i*n+j</span>]是a[<span class="link_label">i</span>][<span class="link_reference">j</span>]</div><div class="line">delete []a;</div></pre></td></tr></table></figure>
+
+<p>（3）第三种，内存不连续，可以 <code>[][]</code>,是第一种情况的特例，局限性比较大，比第一种好在能直接 <code>delete</code>，方便。如果你确实知道 <code>N</code> 是多少，那么可以用这种，比如说二维数组做形参的时候(此时内存连续)，不是很推荐使用</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int (*p)[<span class="link_label">N</span>]  = new int[<span class="link_label">M</span>][<span class="link_reference">N</span>];</div><div class="line">delete[] p;</div></pre></td></tr></table></figure>
+
+<h1 id="第5章_表达式">第5章 表达式</h1>
+<h2 id="1-_零值指针的删除">1. 零值指针的删除</h2>
+<p>P152<br>如果指针的值为 0，则在其上做 <code>delete</code> 操作是合法的，但这样做没有任何意义：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int *ip = 0;</div><div class="line"><span class="operator"><span class="keyword">delete</span> ip;</span> // ok: always ok to <span class="operator"><span class="keyword">delete</span> a pointer that <span class="keyword">is</span> equal <span class="keyword">to</span> <span class="number">0</span></span></div></pre></td></tr></table></figure>
+
+<p>C++ 保证：删除 0 值的指针是安全的。 </p>
+<h2 id="2-_在_delete_之后，重设指针的值">2. 在 <code>delete</code> 之后，重设指针的值</h2>
+<p>P152<br>删除指针后，该指针变成悬垂指针。悬垂指针指向曾经存放对象的内存，但该对象已经不再存在了。悬垂指针往往导致程序错误，而且很难检测出来。<br>一旦删除了指针所指向的对象，<strong>立即将指针置为 0</strong>，这样就非常清楚地表明指针不再指向任何对象。</p>
+<h2 id="3-_强制类型转换">3. 强制类型转换</h2>
+<p>P158</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">double</span> dval;</div><div class="line"><span class="keyword">int</span> ival;</div><div class="line">ival *= dval; <span class="comment">// ival = ival * dval</span></div></pre></td></tr></table></figure>
+
+<p>为了与 <code>dval</code> 做乘法操作，需将 <code>ival</code> 转换为 <code>double</code> 型，然后将乘法操作的 <code>double</code> 型结果截尾为 <code>int</code> 型，再赋值给 <code>ival</code>。为了去掉将 <code>ival</code> 转换为 <code>double</code> 型这个不必要的转换，可通过如下强制将 <code>dval</code> 转换为 <code>int</code> 型：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ival *= <span class="keyword">static_cast</span>&lt;<span class="keyword">int</span>&gt;(dval); <span class="comment">// converts dval to int</span></div></pre></td></tr></table></figure>
+
+<p>显式使用强制类型转换的另一个原因是：可能存在多种转换时，需要选择一种特定的类型转换。我们将在第 14 章中详细讨论这种情况。<br>命名的强制类型转换符号的一般形式如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">cast</span>-name&lt;<span class="typedef"><span class="keyword">type</span>&gt;<span class="container">(<span class="title">expression</span>)</span>;</span></div></pre></td></tr></table></figure>
+
+<p>其中 <code>cast-name</code> 为 <code>static_cast</code>、<code>dynamic_cast</code>、<code>const_cast</code> 和 <code>reinterpret_cast</code> 之一，<code>type</code> 为转换的目标类型，而 <code>expression</code> 则是被强制转换的值。强制转换的类型指定了在 expression 上执行某种特定类型的转换。<br><strong>建议：避免使用强制类型转换</strong><br>强制类型转换关闭或挂起了正常的类型检查。强烈建议程序员避免使用强制类型转换，不依赖强制类型转换也能写出很好的 C++ 程序。 </p>
+<h1 id="第6章_语句">第6章 语句</h1>
+<h2 id="1-_throw_表达式（抛出异常）">1. throw 表达式（抛出异常）</h2>
+<p>P186</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> runtime_error(<span class="string">"Data must refer to same ISBN"</span>);</div></pre></td></tr></table></figure>
+
+<p><code>throw</code> 语句使用了一个表达式。在本例中，该表达式是 <code>runtime_error</code> 类型的对象。<code>runtime_error</code> 类型是标准库异常类中的一种，在 <code>stdexcept</code> 头文件中定义。在后续章节中很快就会更详细地介绍这些类型。我们通过传递 <code>string</code> 对象来创建 <code>runtime_error</code> 对象，这样就可以提供更多关于所出现问题的相关信息。 </p>
+<h2 id="2-_try_块">2. try 块</h2>
+<p>P187<br>try 块的通用语法形式是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> {</div><div class="line">program-statements</div><div class="line">} catch (exception-specifier) {</div><div class="line">handler-statements</div><div class="line">} catch (exception-specifier) {</div><div class="line">handler-statements</div><div class="line">} //<span class="keyword">...</span></div></pre></td></tr></table></figure>
+
+<p>try 语句内的 <code>program-statements</code> 形成程序的正常逻辑。这里面可以包含任意 C++ 语句，包括变量声明。与其他块语句一样，<code>try</code> 块引入局部作用域，在 <code>try</code> 块中声明的变量，包括 <code>catch</code> 子句声明的变量，不能在 <code>try</code> 外面引用。</p>
+<h2 id="3-_异常类的_what()_方法">3. 异常类的 what() 方法</h2>
+<p>P188</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> {</div><div class="line">    //<span class="keyword">...</span></div><div class="line">    throw runtime_error(<span class="string">"Data must refer to same ISBN"</span>);</div><div class="line">    //<span class="keyword">...</span></div><div class="line">} catch (runtime_error err) {</div><div class="line">    cout &lt;&lt; err.what() &lt;&lt; endl;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>每一个标准库异常类都定义了名为 <code>what</code> 的成员函数。这个函数不需要参数，返回 C 风格字符串。在出现 <code>runtime_error</code> 的情况下，<code>what</code> 返回的 C 风格字符串，是用于初始化 <code>runtime_error</code> 的 <code>string</code> 对象的副本。</p>
+<h2 id="4-_函数在寻找处理代码的过程中退出">4. 函数在寻找处理代码的过程中退出</h2>
+<p>P188<br>在复杂的系统中，程序的执行路径也许在遇到抛出异常的代码之前，就已经经过了多个 <code>try</code> 块。例如，一个 <code>try</code> 块可能调用了包含另一 <code>try</code> 块的函数，它的 <code>try</code> 块又调用了含有 <code>try</code> 块的另一个函数，如此类推。<br>寻找处理代码的过程与函数调用链刚好相反。抛出一个异常时，首先要搜索的是抛出异常的函数。如果没有找到匹配的 <code>catch</code>，则终止这个函数的执行，并在调用这个函数的函数中寻找相配的 <code>catch</code>。如果仍然找到相应的处理代码，该函数同样要终止，搜索调用它的函数。如此类推，继续按执行路径回退，直到找到适当类型的 <code>catch</code> 为止。<br>如果不存在处理该异常的 <code>catch</code> 子句，程序的运行就要跳转到名为 <code>terminate</code> 的标准库函数，该函数在 <code>exception</code> 头文件中定义。这个标准库函数的行为依赖于系统，通常情况下，它的执行将导致程序非正常退出。 </p>
+<h2 id="5-_标准异常">5. 标准异常</h2>
+<p>P189<br>C++ 标准库定义了一组类，用于报告在标准库中的函数遇到的问题。程序员可在自己编写的程序中使用这些标准异常类。标准库异常类定义在四个头文件中：</p>
+<ol>
+<li><code>exception</code> 头文件定义了最常见的异常类，它的类名是 <code>exception</code>。这个类只通知异常的产生，但不会提供更多的信息。</li>
+<li><code>stdexcept</code> 头文件定义了几种常见的异常类，这些类型在下表中列出。</li>
+<li><code>new</code> 头文件定义了 <code>bad_alloc</code> 异常类型，提供因无法分配内在而由 <code>new</code> 抛出的异常。</li>
+<li><code>type_info</code> 头文件定义了 <code>bad_cast</code> 异常类型，这种类型将第 18.2 节讨论。</li>
+</ol>
+<p><strong>在 <code>&lt;stdexcept&gt;</code> 头文件中定义的标准异常类</strong> </p>
+<table>
+<thead>
+<tr>
+<th>异常类</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>exception</code></td>
+<td>最常见的问题。</td>
+</tr>
+<tr>
+<td><code>runtime_error</code></td>
+<td>运行时错误：仅在运行时才能检测到问题</td>
+</tr>
+<tr>
+<td><code>range_error</code></td>
+<td>运行时错误：生成的结果超出了有意义的值域范围</td>
+</tr>
+<tr>
+<td><code>overflow_error</code></td>
+<td>运行时错误：计算上溢</td>
+</tr>
+<tr>
+<td><code>underflow_error</code></td>
+<td>运行时错误：计算下溢</td>
+</tr>
+<tr>
+<td><code>logic_error</code></td>
+<td>逻辑错误：可在运行前检测到问题</td>
+</tr>
+<tr>
+<td><code>domain_error</code></td>
+<td>逻辑错误：参数的结果值不存在</td>
+</tr>
+<tr>
+<td><code>invalid_argument</code></td>
+<td>逻辑错误：不合适的参数</td>
+</tr>
+<tr>
+<td><code>length_error</code></td>
+<td>逻辑错误：试图生成一个超出该类型最大长度的对象</td>
+</tr>
+<tr>
+<td><code>out_of_range</code></td>
+<td>逻辑错误：使用一个超出有效范围的值</td>
+</tr>
+</tbody>
+</table>
+<p>标准库异常类只提供很少的操作，包括创建、复制异常类型对象以及异常类型对象的赋值。 <code>exception</code>、<code>bad_alloc</code> 以及 <code>bad_cast</code> 类型只定义了默认构造函数，无法在创建这些类型的对象时为它们提供初值。其他的异常类型则只定义了一个使用 <code>string</code> 初始化式的构造函数。当需要定义这些异常类型的对象时，必须提供一个 <code>string</code> 参数。<code>string</code> 初始化式用于为所发生的错误提供更多的信息。<br>异常类型只定义了一个名为 <code>what</code> 的操作。这个函数不需要任何参数，并且返回 <code>const char*</code> 类型值。它返回的指针指向一个 C 风格字符串。使用 C 风格字符串的目的是为所抛出的异常提出更详细的文字描述。<br><code>what</code> 函数所返回的指针指向 C 风格字符数组的内容，这个数组的内容依赖于异常对象的类型。对于接受 <code>string</code> 初始化式的异常类型，<code>what</code> 函数将返回该 <code>string</code> 作为 C 风格字符数组。对于其他异常类型，返回的值则根据编译器的变化而不同。 </p>
+<h2 id="6-_使用预处理器进行调试">6. 使用预处理器进行调试</h2>
+<p>P190</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">int main()</div><div class="line">{</div><div class="line">    <span class="comment">#ifndef NDEBUG</span></div><div class="line">    cerr &lt;&lt; <span class="string">"starting main"</span> &lt;&lt; endl;</div><div class="line">    <span class="comment">#endif</span></div><div class="line">// <span class="keyword">...</span></div></pre></td></tr></table></figure>
+
+<p>如果 <code>NDEBUG</code> 未定义，那么程序就会将信息写到 <code>cerr</code> 中。如果 <code>NDEBUG</code> 已经定义了，那么程序执行时将会跳过 <code>#ifndef</code> 和 <code>#endif</code> 之间的代码。<br>大多数的编译器都提供定义 <code>NDEBUG</code> 命令行选项：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span><span class="constant">CC</span> -<span class="constant">DNDEBUG</span> main.c</div></pre></td></tr></table></figure>
+
+<p>这样的命令行等效于在 <code>main.c</code> 的开头提供 <code>#define NDEBUG</code> 预处理命令。</p>
+<p>预处理器还定义了其余四种在调试时非常有用的常量：<br><code>__FILE__</code> 文件名<br><code>__LINE__</code> 当前行号<br><code>__TIME__</code> 文件被编译的时间<br><code>__DATE__</code> 文件被编译的日期<br>可使用这些常量在错误消息中提供更多的信息：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="property">word</span>.size() &lt; threshold)</div><div class="line">cerr &lt;&lt; <span class="string">"Error: "</span> &lt;&lt; _ _FILE_ _</div><div class="line">&lt;&lt; <span class="string">" : line "</span> &lt;&lt; _ _LINE_ _ &lt;&lt; endl</div><div class="line">&lt;&lt; <span class="string">" Compiled on "</span> &lt;&lt; _ _DATE_ _</div><div class="line">&lt;&lt; <span class="string">" at "</span> &lt;&lt; _ _TIME_ _ &lt;&lt; endl</div><div class="line">&lt;&lt; <span class="string">" Word read was "</span> &lt;&lt; <span class="property">word</span></div><div class="line">&lt;&lt; <span class="string">": Length too short"</span> &lt;&lt; endl;</div></pre></td></tr></table></figure>
+
+<p>如果给这个程序提供一个比 <code>threshold</code> 短的 <code>string</code> 对象，则会产生下面的错误信息：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Error: wdebug.cc : <span class="built_in">line</span> <span class="number">21</span></div><div class="line">Compiled <span class="command"><span class="keyword">on</span> <span class="title">Jan</span> <span class="title">12</span> <span class="title">2005</span> <span class="title">at</span> <span class="title">19</span>:<span class="title">44</span>:<span class="title">40</span></span></div><div class="line">Word <span class="built_in">read</span> was <span class="string">"foo"</span>: Length too <span class="keyword">short</span></div></pre></td></tr></table></figure>
+
+<p>另一个常见的调试技术是使用 <code>NDEBUG</code> 预处理变量以及 <strong><code>assert</code> 预处理宏</strong>。<br><code>assert</code> 宏是在 <code>cassert</code> 头文件中定义的，所有使用 <code>assert</code> 的文件都必须包含这个头文件。<br>预处理宏有点像函数调用。<code>assert</code> 宏需要一个表达式作为它的条件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">assert</span><span class="params">(expr)</span></span></div></pre></td></tr></table></figure>
+
+<p>只要 <code>NDEBUG</code> 未定义，<code>assert</code> 宏就求解条件表达式 <code>expr</code>，如果结果为 <code>false</code>，<code>assert</code> 输出信息并且终止程序的执行。如果该表达式有一个非零（例如，<code>true</code>）值，则 <code>assert</code> 不做任何操作。<br>与异常不同（异常用于处理程序执行时预期要发生的错误），程序员使用 <code>assert</code> 来测试“不可能发生”的条件。例如，对于处理输入文本的程序，可以预测全部给出的单词都比指定的阈值长。那么程序可以包含这样一个语句：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function">assert(word.<span class="function">size()</span> &gt; threshold)</span>;</div></pre></td></tr></table></figure>
+
+<p>在测试过程中，<code>assert</code> 等效于检验数据是否总是具有预期的大小。一旦开发和测试工作完成，程序就已经建立好，并且定义了 <code>NDEBUG</code>。在成品代码中，<code>assert</code> 语句不做任何工作，因此也没有任何运行时代价。当然，也不会引起任何运行时检查。<code>assert</code> 仅用于检查确实不可能的条件，这只对程序的调试有帮助，但不能用来代替运行时的逻辑检查，也不能代替对程序可能产生的错误的检测。 </p>
+<h1 id="第7章_函数">第7章 函数</h1>
+<h2 id="1-_指针形参">1. 指针形参</h2>
+<p>P200<br>如需保护指针指向的值，则形参需定义为指向 const 对象的指针：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">void use_ptr(const <span class="keyword">int</span> <span class="variable">*p</span>)</div><div class="line">{</div><div class="line"><span class="regexp">//</span> use_ptr may <span class="keyword">read</span> but <span class="keyword">not</span> <span class="keyword">write</span> to <span class="variable">*p</span></div><div class="line">}</div></pre></td></tr></table></figure> 
+
+<h2 id="2-_引用形参">2. 引用形参</h2>
+<p>P202</p>
+<ul>
+<li>可以使用引用形参返回额外的信息，即利用引用形参修改实参的值。</li>
+<li>可以利用 <code>const</code> 引用形参避免复制<br>在向函数传递大型对象时，需要使用引用形参，这是引用形参适用的另一种情况。虽然复制实参对于内置数据类型的对象或者规模较小的类类型对象来说没有什么问题，但是对于大部分的类类型或者大型数组，它的效率（通常）太低了；此外，我们将在第十三章学习到，某些类类型是无法复制的。使用引用形参，函数可以直接访问实参对象，而无须复制它。<br><strong>非 <code>const</code> 引用形参只能与完全同类型的非 <code>const</code> 对象关联。</strong></li>
+</ul>
+<h2 id="3-_const_形参">3. const 形参</h2>
+<p>P204<br>应该将不修改相应实参的形参定义为 <code>const</code> 引用。如果将这样的形参定义为非 <code>const</code> 引用，则毫无必要地限制了该函数的使用。<br>例如，可编写下面的程序，在一个 <code>string</code> 对象中查找一个指定的字符：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">//</span> returns index <span class="keyword">of</span> first occurrence <span class="keyword">of</span> c <span class="keyword">in</span> s <span class="keyword">or</span> s.size()<span class="keyword">if</span> c isn<span class="string">'t in s</span></div><div class="line">// Note: s doesn't change, so it should be a reference to <span class="reserved">const</span></div><div class="line"><span class="attribute">string</span>::size_type find_char(string &s, char c)</div><div class="line">{</div><div class="line">    <span class="attribute">string</span>::size_type i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (i != s.size() && s[i] != c)</div><div class="line">        ++i; <span class="regexp">//</span> <span class="keyword">not</span> found, look at next character</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>这个函数将其 <code>string</code> 类型的实参当作普通（非 <code>const</code>）的引用，尽管函数并没有修改这个形参的值。这样的定义带来的问题是不能通过字符串字面值来调用这个函数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (find_char(<span class="string">"Hello World"</span>, <span class="string">'o'</span>)) // <span class="keyword">...</span></div></pre></td></tr></table></figure>
+
+<p>虽然字符串字面值可以转换为 <code>string</code> 对象，但<strong>上述调用仍然会导致编译失败</strong>。</p>
+<h2 id="4-">4.</h2>
+<p>P</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/原创/">原创</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/编程开发/">编程开发</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://jloveu.github.io/2014/10/26/20141026-C++_Primer_Chinese_Version_4th_Edition_learning_notes/" data-title="《C++ Primer 中文版（第4版）》学习记录 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/11/01/20141101-yue_du_ji_lu/" title="阅读记录">
+  <strong>上一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+  <span>
+  阅读记录</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/10/20/20141020-opencv_on_codeblocks/"  title="CodeBlocks中使用OpenCV-2.4.9完全教程">
+ <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+ <span>CodeBlocks中使用OpenCV-2.4.9完全教程
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014/10/26/20141026-C++_Primer_Chinese_Version_4th_Edition_learning_notes/" data-title="《C++ Primer 中文版（第4版）》学习记录" data-url=""></div>
+<!-- 多说评论框 end -->
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《C++_Primer_中文版（第4版）》学习记录"><span class="toc-number">1.</span> <span class="toc-text">《C++ Primer 中文版（第4版）》学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章_快速入门"><span class="toc-number">2.</span> <span class="toc-text">第1章 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_cerr_和_clog"><span class="toc-number">2.1.</span> <span class="toc-text">1. cerr 和 clog</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第2章_变量和基本类型"><span class="toc-number">3.</span> <span class="toc-text">第2章 变量和基本类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_使用反斜线断行"><span class="toc-number">3.1.</span> <span class="toc-text">1. 使用反斜线断行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_C++两种初始化方式"><span class="toc-number">3.2.</span> <span class="toc-text">2. C++两种初始化方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_const_对象默认为文件的局部变量"><span class="toc-number">3.3.</span> <span class="toc-text">3. const 对象默认为文件的局部变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_引用"><span class="toc-number">3.4.</span> <span class="toc-text">4. 引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_枚举类型"><span class="toc-number">3.5.</span> <span class="toc-text">5. 枚举类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_class_和_struct_的区别"><span class="toc-number">3.6.</span> <span class="toc-text">6. class 和 struct 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_头文件"><span class="toc-number">3.7.</span> <span class="toc-text">7. 头文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第3章_标准库类型"><span class="toc-number">4.</span> <span class="toc-text">第3章 标准库类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_using_声明"><span class="toc-number">4.1.</span> <span class="toc-text">1. using 声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_getline_函数"><span class="toc-number">4.2.</span> <span class="toc-text">2. getline 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_string::size_type_类型"><span class="toc-number">4.3.</span> <span class="toc-text">3. string::size_type 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_string_类的“+”运算符"><span class="toc-number">4.4.</span> <span class="toc-text">4. string 类的“+”运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_string_下标"><span class="toc-number">4.5.</span> <span class="toc-text">5. string 下标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_cctype_中的函数"><span class="toc-number">4.6.</span> <span class="toc-text">6. cctype 中的函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_建议：采用C_标准库头文件的C++_版本"><span class="toc-number">4.7.</span> <span class="toc-text">7. 建议：采用C 标准库头文件的C++ 版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-_标准库_vector_类型"><span class="toc-number">4.8.</span> <span class="toc-text">8. 标准库 vector 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-_vector_对象的操作"><span class="toc-number">4.9.</span> <span class="toc-text">9. vector 对象的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-_vector_对象的_size()_方法"><span class="toc-number">4.10.</span> <span class="toc-text">10. vector 对象的 size() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-_vector_的下标操作"><span class="toc-number">4.11.</span> <span class="toc-text">11. vector 的下标操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-_vector_下标操作不添加元素"><span class="toc-number">4.12.</span> <span class="toc-text">12. vector 下标操作不添加元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-_迭代器_iterator"><span class="toc-number">4.13.</span> <span class="toc-text">13. 迭代器 iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-_begin_和_end_操作"><span class="toc-number">4.14.</span> <span class="toc-text">14. begin 和 end 操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-_vector_迭代器的自增和解引用运算"><span class="toc-number">4.15.</span> <span class="toc-text">15. vector 迭代器的自增和解引用运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-_迭代器的比较操作"><span class="toc-number">4.16.</span> <span class="toc-text">16. 迭代器的比较操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-_迭代器应用的程序示例"><span class="toc-number">4.17.</span> <span class="toc-text">17. 迭代器应用的程序示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-_const_iterator"><span class="toc-number">4.18.</span> <span class="toc-text">18. const_iterator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-_迭代器的算术操作"><span class="toc-number">4.19.</span> <span class="toc-text">19. 迭代器的算术操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20-_标准库_bitset_类型"><span class="toc-number">4.20.</span> <span class="toc-text">20. 标准库 bitset 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-_用_string_对象初始化_bitset_对象"><span class="toc-number">4.21.</span> <span class="toc-text">21. 用 string 对象初始化 bitset 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-_bitset_对象上的操作"><span class="toc-number">4.22.</span> <span class="toc-text">22. bitset 对象上的操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第4章_数组和指针"><span class="toc-number">5.</span> <span class="toc-text">第4章 数组和指针</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_现代_C++_程序应避免使用低级的数组和指针"><span class="toc-number">5.1.</span> <span class="toc-text">1. 现代 C++ 程序应避免使用低级的数组和指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_不允许数组直接复制和赋值"><span class="toc-number">5.2.</span> <span class="toc-text">2. 不允许数组直接复制和赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_数组下标的类型为_size_t"><span class="toc-number">5.3.</span> <span class="toc-text">3. 数组下标的类型为 size_t</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_定义指针的写法"><span class="toc-number">5.4.</span> <span class="toc-text">4. 定义指针的写法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_指针和引用的区别"><span class="toc-number">5.5.</span> <span class="toc-text">5. 指针和引用的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_指针和_const_限定符"><span class="toc-number">5.6.</span> <span class="toc-text">6. 指针和 const 限定符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-_指针和_typedef"><span class="toc-number">5.7.</span> <span class="toc-text">7. 指针和 typedef</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-_允许动态分配空数组"><span class="toc-number">5.8.</span> <span class="toc-text">8. 允许动态分配空数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-_动态空间的释放"><span class="toc-number">5.9.</span> <span class="toc-text">9. 动态空间的释放</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第5章_表达式"><span class="toc-number">6.</span> <span class="toc-text">第5章 表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_零值指针的删除"><span class="toc-number">6.1.</span> <span class="toc-text">1. 零值指针的删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_在_delete_之后，重设指针的值"><span class="toc-number">6.2.</span> <span class="toc-text">2. 在 delete 之后，重设指针的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_强制类型转换"><span class="toc-number">6.3.</span> <span class="toc-text">3. 强制类型转换</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第6章_语句"><span class="toc-number">7.</span> <span class="toc-text">第6章 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_throw_表达式（抛出异常）"><span class="toc-number">7.1.</span> <span class="toc-text">1. throw 表达式（抛出异常）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_try_块"><span class="toc-number">7.2.</span> <span class="toc-text">2. try 块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_异常类的_what()_方法"><span class="toc-number">7.3.</span> <span class="toc-text">3. 异常类的 what() 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_函数在寻找处理代码的过程中退出"><span class="toc-number">7.4.</span> <span class="toc-text">4. 函数在寻找处理代码的过程中退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-_标准异常"><span class="toc-number">7.5.</span> <span class="toc-text">5. 标准异常</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-_使用预处理器进行调试"><span class="toc-number">7.6.</span> <span class="toc-text">6. 使用预处理器进行调试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第7章_函数"><span class="toc-number">8.</span> <span class="toc-text">第7章 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_指针形参"><span class="toc-number">8.1.</span> <span class="toc-text">1. 指针形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_引用形参"><span class="toc-number">8.2.</span> <span class="toc-text">2. 引用形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_const_形参"><span class="toc-number">8.3.</span> <span class="toc-text">3. const 形参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-"><span class="toc-number">8.4.</span> <span class="toc-text">4.</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/保研考研/" title="保研考研">保研考研<sup>6</sup></a></li>
+		
+			<li><a href="/categories/技术杂谈/" title="技术杂谈">技术杂谈<sup>1</sup></a></li>
+		
+			<li><a href="/categories/编程开发/" title="编程开发">编程开发<sup>6</sup></a></li>
+		
+			<li><a href="/categories/茶余饭后/" title="茶余饭后">茶余饭后<sup>2</sup></a></li>
+		
+			<li><a href="/categories/论文报告/" title="论文报告">论文报告<sup>1</sup></a></li>
+		
+			<li><a href="/categories/阅读记录/" title="阅读记录">阅读记录<sup>5</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android开发/" title="Android开发">Android开发<sup>2</sup></a></li>
+		
+			<li><a href="/tags/保研/" title="保研">保研<sup>5</sup></a></li>
+		
+			<li><a href="/tags/原创/" title="原创">原创<sup>14</sup></a></li>
+		
+			<li><a href="/tags/复试/" title="复试">复试<sup>6</sup></a></li>
+		
+			<li><a href="/tags/第一桶金/" title="第一桶金">第一桶金<sup>1</sup></a></li>
+		
+			<li><a href="/tags/编程规范/" title="编程规范">编程规范<sup>1</sup></a></li>
+		
+			<li><a href="/tags/考研/" title="考研">考研<sup>1</sup></a></li>
+		
+			<li><a href="/tags/自动化/" title="自动化">自动化<sup>6</sup></a></li>
+		
+			<li><a href="/tags/计划监督者/" title="计划监督者">计划监督者<sup>1</sup></a></li>
+		
+			<li><a href="/tags/转载/" title="转载">转载<sup>7</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Android开发/" style="font-size: 12.00px;">Android开发</a><a href="/tags/保研/" style="font-size: 14.00px;">保研</a><a href="/tags/原创/" style="font-size: 20.00px;">原创</a><a href="/tags/复试/" style="font-size: 16.00px;">复试</a><a href="/tags/第一桶金/" style="font-size: 10.00px;">第一桶金</a><a href="/tags/编程规范/" style="font-size: 10.00px;">编程规范</a><a href="/tags/考研/" style="font-size: 10.00px;">考研</a><a href="/tags/自动化/" style="font-size: 16.00px;">自动化</a><a href="/tags/计划监督者/" style="font-size: 10.00px;">计划监督者</a><a href="/tags/转载/" style="font-size: 18.00px;">转载</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">十月 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">九月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://jloveu.github.io/IloveUFangYu/a" target="_blank" title="Baby I love U">2014七夕情人节</a></li>
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><!-- 说明：本文件定义网页最低端的作者图片、2行作者介绍、作者各网站链接和Power by。 ——于强 2014-07-25 -->
+<div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 欢迎参观我的博客！ <br/>
+			在这里记载的，都是我学习生活的点滴记录。</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2755919507" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/JloveU" target="_blank" title="github"></a>
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://jloveu.github.io/" target="_blank" title="yuqiang">yuqiang</a>
+		
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe30b6f9dbaadde33318eaad49ef6e9e5' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		</p>
+
+</div>
+</footer>
+    <!-- 说明：本文件是定义网页中，紧接着文章下面到footer的那一块，包括所属分类、包含标签、社交网站分享、前后篇博文链接、多说评论等。 ——于强 2014-07-25 -->
+<script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<!-- 这段代码是多说评论组件的js代码，其中有一句“ds.src = '//static.duoshuo.com/embed.js';”被我改成了“ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';” ——于强 2014-07-25 -->
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jloveu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>
