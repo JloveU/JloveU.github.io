@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>阅读记录 | JloveU&#39;s Blog</title>
+    <title>阅读记录（2014年11月，持续更新中……） | JloveU&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="yuqiang">
@@ -70,7 +70,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/01/20141101-yue_du_ji_lu/" title="阅读记录" itemprop="url">阅读记录</a>
+      <a href="/2014/11/01/20141101-yue_du_ji_lu/" title="阅读记录（2014年11月，持续更新中……）" itemprop="url">阅读记录（2014年11月，持续更新中……）</a>
   </h1>
   <p class="article-author">By
     
@@ -78,7 +78,7 @@
     </p>
   <p class="article-time">
     <time datetime="2014-11-01T15:00:00.000Z" itemprop="datePublished">11月 1 2014</time>
-    更新日期:<time datetime="2014-11-01T07:07:45.000Z" itemprop="dateModified">11月 1 2014</time>
+    更新日期:<time datetime="2014-11-06T15:38:57.000Z" itemprop="dateModified">11月 6 2014</time>
     
   </p>
 </header>
@@ -87,12 +87,36 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-01"><span class="toc-number">1.</span> <span class="toc-text">2014-11-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android开发"><span class="toc-number">1.1.</span> <span class="toc-text">Android开发</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-06"><span class="toc-number">1.</span> <span class="toc-text">2014-11-06</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_GET_POST"><span class="toc-number">1.1.</span> <span class="toc-text">Android GET POST</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-05"><span class="toc-number">2.</span> <span class="toc-text">2014-11-05</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu系统安装"><span class="toc-number">2.1.</span> <span class="toc-text">Ubuntu系统安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-01"><span class="toc-number">3.</span> <span class="toc-text">2014-11-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android开发"><span class="toc-number">3.1.</span> <span class="toc-text">Android开发</span></a></li></ol></li></ol>
 		</div>
 		
 		<p>本文记录本人曾经阅读过的一些文章，其中主要包括在编程、学习过程中搜集的一些琐碎知识点等。<br>由于文章过多，此处只记录文章的地址，可点击查看原网页。<br>由于内容很多，放在一篇文章中显得太长，故每个月一篇。  </p>
 <a id="more"></a>
 
+<h1 id="2014-11-06">2014-11-06</h1>
+<h2 id="Android_GET_POST">Android GET POST</h2>
+<p><a href="http://www.cnblogs.com/lingyun1120/archive/2012/01/10/2318308.html" target="_blank" rel="external">Androd学习笔记——[转]Android Http get post请求 - lingyun1120 - 博客园</a><br><a href="http://www.cnblogs.com/mengdd/p/3142442.html" target="_blank" rel="external">Android HTTP实例 使用GET方法和POST方法发送请求 - 圣骑士wind - 博客园</a><br><a href="http://www.cnblogs.com/mengdd/archive/2013/05/26/3099776.html" target="_blank" rel="external">HTTP基础：URL格式、 HTTP请求、响应、消息 - 圣骑士wind - 博客园</a></p>
+<blockquote>
+<p><strong>HTTP请求方法：</strong><br><img src="/images/20141101-yue_du_ji_lu/HTTP请求方法.png" alt=""></p>
+<p><strong>HEAD方法</strong><br>HEAD方法与GET方法几乎是一样的，它们的区别在于HEAD方法只是请求消息报头，而不是完整的内容。<br>对于HEAD请求的回应部分来说，它的HTTP头部中包含的信息与通过GET请求所得到的信息是相同的。<br>利用这个方法，不必传输整个资源的内容，就可以得到Request-URI所标识的资源的信息。<br>这个方法通常用于<em>测试超链接的有效性，是否可以访问，以及最近是否更新</em>等。</p>
+<p><strong>HTTP响应状态代码</strong><br>状态代码由三位数字组成，表示请求是否被理解或被满足，状态描述给出了关于状态代码的简短文本描述。<br>状态代码的第一个数字定义了响应的类别，后面两个数字没有具体的分类。<br>第一个数字有五种可能的取值：</p>
+<ul>
+<li><code>1xx</code>：指示信息——表示请求已接收，继续处理</li>
+<li><code>2xx</code>：成功——表示请求已经被成功接收，理解，接受</li>
+<li><code>3xx</code>：重定向——要完成请求必须进行更进一步的操作</li>
+<li><code>4xx</code>：客户端错误——请求有语法错误或请求无法实现</li>
+<li><code>5xx</code>：服务器端错误——服务器未能实现合法的请求</li>
+</ul>
+<p><img src="/images/20141101-yue_du_ji_lu/HTTP响应——状态代码与状态描述.png" alt=""></p>
+</blockquote>
+<p><a href="http://httpstatus.es/" target="_blank" rel="external">HTTP状态码查询：http://httpstatus.es/</a><br><a href="http://ipjmc.iteye.com/blog/1577495" target="_blank" rel="external"><strong>Android HttpClient基本使用方法 - - ITeye技术网站</strong></a><br><a href="http://www.2cto.com/kf/201207/139374.html" target="_blank" rel="external">Android入门：用HttpClient模拟HTTP的GET和POST请求 - Android移动开发技术文章_手机开发 - 红黑联盟</a><br><a href="http://blog.csdn.net/heng615975867/article/details/9012303" target="_blank" rel="external"><strong>Android网络优化之HttpClient - heng615975867的专栏 - 博客频道 - CSDN.NET</strong></a></p>
+<blockquote>
+<p>尽管<strong>Android官网推荐在2.3及后续版本中使用HttpURLConnection作为网络开发首选类</strong>，但在连接管理和线程安全方面，HttpClient还是具有很大优势。就目前而言，HttpClient仍是一个值得考虑的选择。</p>
+</blockquote>
+<p><a href="http://wenku.baidu.com/link?url=vAd6jTHwYv9pFb5tizddowZxS6udzskp8KEpAwjfkwMIefZ6BHg4EYelsqUeNrvHF0dQL9tYSeLTuAXMUfj8AqG5OspQmwBEHtR8mho90a_" target="_blank" rel="external">android开发技术HttpClient多线程_百度文库</a><br><a href="http://www.open-open.com/lib/view/open1329101420890.html" target="_blank" rel="external">Android 网络数据的处理之 HttpClient - OPEN 开发经验库</a></p>
+<h1 id="2014-11-05">2014-11-05</h1>
+<h2 id="Ubuntu系统安装">Ubuntu系统安装</h2>
+<p><a href="http://bbs.51cto.com/thread-966627-1.html" target="_blank" rel="external">win7与Ubuntu双系统安装过程 - Linux论坛 - 51CTO技术论坛_中国领先的IT技术社区</a><br><a href="http://www.baidu.com/s?wd=gfxboot.c32%3A%20not%20a%20com32r%20image" target="_blank" rel="external">gfxboot.c32: not a com32r image_百度搜索</a><br><a href="http://www.ubuntukylin.com/ukylin/forum.php?mod=viewthread&amp;tid=10060&amp;extra=&amp;page=1" target="_blank" rel="external">多次反复安装证明，14.10用软碟通做启动U盘无法安装。14.04LTS却每次都能成功！ - Ubuntu Kylin特色应用 - Ubuntu Kylin技术论坛 - Powered by Discuz!</a><br><a href="https://bbs.archlinux.org/viewtopic.php?id=172250" target="_blank" rel="external">[SOLVED] Cannot boot USB installation media (Page 1) / Installation / Arch Linux Forums</a><br><a href="https://bbs.archlinux.org/viewtopic.php?id=172250" target="_blank" rel="external">[SOLVED] Cannot boot USB installation media (Page 1) / Installation / Arch Linux Forums</a></p>
 <h1 id="2014-11-01">2014-11-01</h1>
 <h2 id="Android开发">Android开发</h2>
 <p><a href="http://blog.csdn.net/vipzjyno1/article/details/23591315" target="_blank" rel="external">（android高仿系列）今日头条 —新闻阅读器 （一） - 未来之路 的专栏 - 博客频道 - CSDN.NET</a><br><a href="http://blog.csdn.net/vipzjyno1/article/details/21039349" target="_blank" rel="external">Android APK反编译就这么简单 详解（附图） - 未来之路 的专栏 - 博客频道 - CSDN.NET</a></p>
@@ -116,7 +140,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://jloveu.github.io/2014/11/01/20141101-yue_du_ji_lu/" data-title="阅读记录 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://jloveu.github.io/2014/11/01/20141101-yue_du_ji_lu/" data-title="阅读记录（2014年11月，持续更新中……） | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -125,11 +149,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2014/11/06/20141105-Ubuntu_install/" title="Windows7 + Ubuntu双系统安装过程记录">
+  <strong>上一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
+  <span>
+  Windows7 + Ubuntu双系统安装过程记录</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2014/10/26/20141030-Android_Kernel_Analysis_learning_notes/"  title="《C++ Primer 中文版（第4版）》学习记录">
+<a href="/2014/10/26/20141030-Android_Kernel_Analysis_learning_notes/"  title="《Android内核剖析》学习记录">
  <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
- <span>《C++ Primer 中文版（第4版）》学习记录
+ <span>《Android内核剖析》学习记录
 </span>
 </a>
 </div>
@@ -139,7 +171,7 @@
 	
 <section class="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2014/11/01/20141101-yue_du_ji_lu/" data-title="阅读记录" data-url=""></div>
+	<div class="ds-thread" data-thread-key="2014/11/01/20141101-yue_du_ji_lu/" data-title="阅读记录（2014年11月，持续更新中……）" data-url=""></div>
 <!-- 多说评论框 end -->
 </section>
 
@@ -148,7 +180,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-01"><span class="toc-number">1.</span> <span class="toc-text">2014-11-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android开发"><span class="toc-number">1.1.</span> <span class="toc-text">Android开发</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-06"><span class="toc-number">1.</span> <span class="toc-text">2014-11-06</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android_GET_POST"><span class="toc-number">1.1.</span> <span class="toc-text">Android GET POST</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-05"><span class="toc-number">2.</span> <span class="toc-text">2014-11-05</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu系统安装"><span class="toc-number">2.1.</span> <span class="toc-text">Ubuntu系统安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2014-11-01"><span class="toc-number">3.</span> <span class="toc-text">2014-11-01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Android开发"><span class="toc-number">3.1.</span> <span class="toc-text">Android开发</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
@@ -162,7 +194,7 @@
 		
 			<li><a href="/categories/保研考研/" title="保研考研">保研考研<sup>6</sup></a></li>
 		
-			<li><a href="/categories/技术杂谈/" title="技术杂谈">技术杂谈<sup>1</sup></a></li>
+			<li><a href="/categories/技术杂谈/" title="技术杂谈">技术杂谈<sup>2</sup></a></li>
 		
 			<li><a href="/categories/编程开发/" title="编程开发">编程开发<sup>7</sup></a></li>
 		
@@ -185,7 +217,7 @@
 		
 			<li><a href="/tags/保研/" title="保研">保研<sup>5</sup></a></li>
 		
-			<li><a href="/tags/原创/" title="原创">原创<sup>15</sup></a></li>
+			<li><a href="/tags/原创/" title="原创">原创<sup>16</sup></a></li>
 		
 			<li><a href="/tags/复试/" title="复试">复试<sup>6</sup></a></li>
 		
@@ -217,7 +249,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">十一月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">十月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">九月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11">十一月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10">十月 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09">九月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">八月 2014</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">7</span></li></ul>
   </div>
 
 

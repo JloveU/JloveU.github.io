@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>《Android内核剖析》学习记录 | JloveU&#39;s Blog</title>
+    <title>Windows7 + Ubuntu双系统安装过程记录 | JloveU&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="yuqiang">
     
-    <meta name="description" content="本文为在阅读《Android内核剖析》的过程中记录的知识点。">
+    <meta name="description" content="本文为在已安装Windows7系统的前提下安装Ubuntu Kylin 14.10系统的过程以及期间出现的各种问题的记录。">
     
     
     
@@ -70,15 +70,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/10/26/20141030-Android_Kernel_Analysis_learning_notes/" title="《Android内核剖析》学习记录" itemprop="url">《Android内核剖析》学习记录</a>
+      <a href="/2014/11/06/20141105-Ubuntu_install/" title="Windows7 + Ubuntu双系统安装过程记录" itemprop="url">Windows7 + Ubuntu双系统安装过程记录</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://jloveu.github.io/" title="yuqiang">yuqiang</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-26T13:00:00.000Z" itemprop="datePublished">10月 26 2014</time>
-    更新日期:<time datetime="2014-11-05T14:55:04.000Z" itemprop="dateModified">11月 5 2014</time>
+    <time datetime="2014-11-05T22:00:00.000Z" itemprop="datePublished">11月 6 2014</time>
+    更新日期:<time datetime="2014-11-05T16:05:32.000Z" itemprop="dateModified">11月 6 2014</time>
     
   </p>
 </header>
@@ -87,70 +87,82 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《Android内核剖析》学习记录"><span class="toc-number">1.</span> <span class="toc-text">《Android内核剖析》学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章_Linux基础"><span class="toc-number">2.</span> <span class="toc-text">第1章 Linux基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_Linux系统根目录结构"><span class="toc-number">2.1.</span> <span class="toc-text">1. Linux系统根目录结构</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu系统下载"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu系统下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将系统镜像刻录到U盘"><span class="toc-number">2.</span> <span class="toc-text">将系统镜像刻录到U盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给Ubuntu分配空间"><span class="toc-number">3.</span> <span class="toc-text">给Ubuntu分配空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重启电脑，开始安装"><span class="toc-number">4.</span> <span class="toc-text">重启电脑，开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_无法启动安装"><span class="toc-number">4.1.</span> <span class="toc-text">1. 无法启动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_分配空间"><span class="toc-number">4.2.</span> <span class="toc-text">2. 分配空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_添加启动项"><span class="toc-number">5.</span> <span class="toc-text">3. 添加启动项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新安装的Ubuntu系统的优化配置"><span class="toc-number">6.</span> <span class="toc-text">新安装的Ubuntu系统的优化配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_鼠标闪烁"><span class="toc-number">6.1.</span> <span class="toc-text">1. 鼠标闪烁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_时间快了8小时"><span class="toc-number">6.2.</span> <span class="toc-text">2. 时间快了8小时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_锐捷认证"><span class="toc-number">6.3.</span> <span class="toc-text">3. 锐捷认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_主题设置"><span class="toc-number">6.4.</span> <span class="toc-text">4. 主题设置</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>本文为在阅读《Android内核剖析》的过程中记录的知识点。</p>
+		<p>本文为在已安装Windows7系统的前提下安装Ubuntu Kylin 14.10系统的过程以及期间出现的各种问题的记录。</p>
 <a id="more"></a>
 
 <!--style type="text/css">
 p{text-indent:2em}
 </style-->
 
-<h1 id="《Android内核剖析》学习记录">《Android内核剖析》学习记录</h1>
-<hr>
-<p>本书详细分析了Android内核的内部机制，包括窗口管理系统、Activity管理系统、输入法框架、编译系统等，为Android内核定制及高级应用程序开发提供技术参考。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>书    名</td>
-<td>Android内核剖析</td>
-</tr>
-<tr>
-<td>作    者</td>
-<td>柯元旦</td>
-</tr>
-<tr>
-<td>ISBN</td>
-<td>9787121143984</td>
-</tr>
-<tr>
-<td>字    数</td>
-<td>1109千字</td>
-</tr>
-<tr>
-<td>页    数</td>
-<td>616</td>
-</tr>
-<tr>
-<td>出 版 社</td>
-<td>电子工业出版社</td>
-</tr>
-<tr>
-<td>出版时间</td>
-<td>2011年9月1日 第1版</td>
-</tr>
-<tr>
-<td>装    帧</td>
-<td>平装</td>
-</tr>
-<tr>
-<td>开    本</td>
-<td>16</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><code>2014-10-30</code></p>
-<h1 id="第1章_Linux基础">第1章 Linux基础</h1>
-<h2 id="1-_Linux系统根目录结构">1. Linux系统根目录结构</h2>
-<p><img src="http://jloveu.github.io/images/20141020-opencv_on_codeblocks/5.png" alt=""></p>
+<h1 id="Ubuntu系统下载">Ubuntu系统下载</h1>
+<p>Ubuntu Kylin中文官方网站：<a href="http://www.ubuntu-china.cn/" target="_blank" rel="external">http://www.ubuntu-china.cn/</a></p>
+<p>Ubuntu Kylin 14.10 64位下载地址：<br><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.10/release/ubuntukylin-14.10-desktop-amd64.iso" target="_blank" rel="external">http://cdimage.ubuntu.com/ubuntukylin/releases/14.10/release/ubuntukylin-14.10-desktop-amd64.iso</a></p>
+<p>Ubuntu Kylin 14.10 32位下载地址：<br><a href="http://cdimage.ubuntu.com/ubuntukylin/releases/14.10/release/ubuntukylin-14.10-desktop-i386.iso" target="_blank" rel="external">http://cdimage.ubuntu.com/ubuntukylin/releases/14.10/release/ubuntukylin-14.10-desktop-i386.iso</a></p>
+<h1 id="将系统镜像刻录到U盘">将系统镜像刻录到U盘</h1>
+<p>我选择安装的是64位版系统，即 <code>ubuntukylin-14.10-desktop-amd64.iso</code>。</p>
+<p>用 <code>UltraISO</code> 软件将此系统镜像刻录到U盘。</p>
+<h1 id="给Ubuntu分配空间">给Ubuntu分配空间</h1>
+<p>从硬盘中分出一定大小的分区，我使用的是Windows7自带的卷压缩功能，将最后一个盘压缩出了20G空间。（有人说最好把分配给Ubuntu的分区放在硬盘的最后一段，为的是避免原Windows系统分区识别出错。）</p>
+<p>将此分区删除，使之处于空闲状态即可。</p>
+<h1 id="重启电脑，开始安装">重启电脑，开始安装</h1>
+<p>插入刚才制作的启动U盘，重启电脑，从U盘启动。</p>
+<p>期间有几个问题需要注意：</p>
+<h2 id="1-_无法启动安装">1. 无法启动安装</h2>
+<p>从U盘启动后可能会出错，显示：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">gfxboot.c32</span>: <span class="string">not a com32r image</span></div></pre></td></tr></table></figure>
+
+<p>这时可以输入：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">live-<span class="keyword">install</span></div></pre></td></tr></table></figure>
+
+<p>然后回车，即开始安装。</p>
+<blockquote>
+<p>参考链接：<br><a href="http://www.dedecms.com/knowledge/servers/linux-bsd/2012/0823/13217.html" target="_blank" rel="external">Ubuntu系统中重新安装不同版本的Ubuntu（……Not a COM32R image_织梦CMS</a></p>
+</blockquote>
+<h2 id="2-_分配空间">2. 分配空间</h2>
+<p>安装过程中要为系统中的不同目录分配空间。一般要为以下4项分配空间：</p>
+<ul>
+<li><code>/boot</code>：Linux系统内核所在目录</li>
+<li><code>swap</code>：虚拟内存</li>
+<li><code>/</code>：Linux系统根目录</li>
+<li><code>/home</code>：用户数据根目录</li>
+</ul>
+<p><code>/boot</code>：Linux系统内核只有几十M，分配200M左右即可。</p>
+<p><code>swap</code>：虚拟内存，如果电脑配置的内存小于2G，则需要swap为实际内存的2倍，否则swap和实际内存大小相同即可，比如我的电脑装了4G内存，那么我为swap分配了4G空间。</p>
+<p><code>/</code>：这个是Linux系统的根目录，包括安装的软件等，可以分配大一点，我分配了15G。</p>
+<p><code>/home</code>：分配完上面3项之后，将剩下的2G左右空间分配给了这部分。因为Linux系统可以访问Windows的NTFS硬盘，所以这部分可以不用分配太大。</p>
+<h1 id="3-_添加启动项">3. 添加启动项</h1>
+<p>Ubuntu安装完之后重启，但是此时还不能进入Ubuntu系统，因为没有指向Ubuntu的启动项。</p>
+<p>进入Windows7系统，运行EasyBCD软件，点击“添加新条目”-&gt;“Linux/BSD”，输入启动项名称，“驱动器”选择对应的 <code>/boot</code> 所在分区，点击“添加条目”。</p>
+<p>重启。即可看到对应Ubuntu的启动项。</p>
+<h1 id="新安装的Ubuntu系统的优化配置">新安装的Ubuntu系统的优化配置</h1>
+<p>安装完Ubuntu系统后，又遇到了一些问题：</p>
+<h2 id="1-_鼠标闪烁">1. 鼠标闪烁</h2>
+<p>首次进入Ubuntu系统时，可能会出现鼠标闪烁的问题，鼠标经过的地方会留下痕迹。</p>
+<p>解决办法是：</p>
+<p>进入系统设置，点击“显示”，会发现有两个显示器，选中“未知显示器”，设置为“关闭”，确定退出即可。</p>
+<blockquote>
+<p>参考链接：<br><a href="http://jingyan.baidu.com/article/c74d600060574a0f6a595dac.html" target="_blank" rel="external">如何解决 Ubuntu 系统 鼠标 指针跳动的问题_百度经验</a></p>
+</blockquote>
+<h2 id="2-_时间快了8小时">2. 时间快了8小时</h2>
+<p>Ubuntu系统安装的时候选择了所在时区，但是安装完之后时间比北京时间快了8小时。</p>
+<p>进入系统设置，修改一下时区，或者手动修改一下时间即可。</p>
+<h2 id="3-_锐捷认证">3. 锐捷认证</h2>
+<p>华科校园网需要使用锐捷认证，下载锐捷Linux版，解压。</p>
+<p>为其中的 <code>rjsupplicant.sh</code> 脚本添加执行权限，方法是在该文件所在目录打开终端，输入并执行以下命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> chmod +x ./rjsupplicant.sh</div></pre></td></tr></table></figure>
+
+<p>然后输入并执行以下命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="built_in">.</span>/rjsupplicant<span class="built_in">.</span>sh <span class="attribute">-d1</span> <span class="attribute">-neh0</span> <span class="attribute">-sinternet</span> <span class="attribute">-u</span>校园网用户名 <span class="attribute">-p199166</span> <span class="attribute">-S1</span></div></pre></td></tr></table></figure>
+
+<p>具体使用方法可以输入并执行以下命令查看：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">sudo</span> ./rjsupplicant.sh -h</div></pre></td></tr></table></figure>
+
+<h2 id="4-_主题设置">4. 主题设置</h2>
+<p>在系统设置中修改了主题，回不到最原始的主题了。</p>
+<p>可以打开“优客助手”，其中有一个主题就是Ubuntu系统的默认主题。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -163,14 +175,14 @@ p{text-indent:2em}
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/编程开发/">编程开发</a>
+  <a class="article-category-link" href="/categories/技术杂谈/">技术杂谈</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://jloveu.github.io/2014/10/26/20141030-Android_Kernel_Analysis_learning_notes/" data-title="《Android内核剖析》学习记录 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://jloveu.github.io/2014/11/06/20141105-Ubuntu_install/" data-title="Windows7 + Ubuntu双系统安装过程记录 | JloveU&#39;s Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -179,19 +191,11 @@ p{text-indent:2em}
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/01/20141101-yue_du_ji_lu/" title="阅读记录（2014年11月，持续更新中……）">
-  <strong>上一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
-  <span>
-  阅读记录（2014年11月，持续更新中……）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/10/26/20141026-C++_Primer_Chinese_Version_4th_Edition_learning_notes/"  title="《C++ Primer 中文版（第4版）》学习记录">
+<a href="/2014/11/01/20141101-yue_du_ji_lu/"  title="阅读记录（2014年11月，持续更新中……）">
  <strong>下一篇：</strong><br/> <!-- 说明：修改文章下面显示的“NEXT：”为中文，到zh-CN.yml文件中找。 ——于强 2014-08-15 -->
- <span>《C++ Primer 中文版（第4版）》学习记录
+ <span>阅读记录（2014年11月，持续更新中……）
 </span>
 </a>
 </div>
@@ -201,7 +205,7 @@ p{text-indent:2em}
 	
 <section class="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2014/10/26/20141030-Android_Kernel_Analysis_learning_notes/" data-title="《Android内核剖析》学习记录" data-url=""></div>
+	<div class="ds-thread" data-thread-key="2014/11/06/20141105-Ubuntu_install/" data-title="Windows7 + Ubuntu双系统安装过程记录" data-url=""></div>
 <!-- 多说评论框 end -->
 </section>
 
@@ -210,7 +214,7 @@ p{text-indent:2em}
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#《Android内核剖析》学习记录"><span class="toc-number">1.</span> <span class="toc-text">《Android内核剖析》学习记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章_Linux基础"><span class="toc-number">2.</span> <span class="toc-text">第1章 Linux基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_Linux系统根目录结构"><span class="toc-number">2.1.</span> <span class="toc-text">1. Linux系统根目录结构</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu系统下载"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu系统下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将系统镜像刻录到U盘"><span class="toc-number">2.</span> <span class="toc-text">将系统镜像刻录到U盘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给Ubuntu分配空间"><span class="toc-number">3.</span> <span class="toc-text">给Ubuntu分配空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重启电脑，开始安装"><span class="toc-number">4.</span> <span class="toc-text">重启电脑，开始安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_无法启动安装"><span class="toc-number">4.1.</span> <span class="toc-text">1. 无法启动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_分配空间"><span class="toc-number">4.2.</span> <span class="toc-text">2. 分配空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_添加启动项"><span class="toc-number">5.</span> <span class="toc-text">3. 添加启动项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新安装的Ubuntu系统的优化配置"><span class="toc-number">6.</span> <span class="toc-text">新安装的Ubuntu系统的优化配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_鼠标闪烁"><span class="toc-number">6.1.</span> <span class="toc-text">1. 鼠标闪烁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_时间快了8小时"><span class="toc-number">6.2.</span> <span class="toc-text">2. 时间快了8小时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_锐捷认证"><span class="toc-number">6.3.</span> <span class="toc-text">3. 锐捷认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_主题设置"><span class="toc-number">6.4.</span> <span class="toc-text">4. 主题设置</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
