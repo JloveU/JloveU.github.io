@@ -1,7 +1,7 @@
 body{background:#f9f9f9;color:#444;font:normal 70%/150% verdana,geneva,sans-serif;margin:0;padding:0;}
 body blockquote{padding-left:0.5em;}
 body code,body pre{font:1em/150% consolas,"courier new",courier,monospace;font-weight:bold;}
-body div#start{background:#fff;border-left:3px solid #f1f1f1;border-right:3px solid #f1f1f1;color:#444;margin:0 auto;padding:1em 2em;width:50em;}
+body div#start{background:#fff;border-left:3px solid #f1f1f1;border-right:3px solid #f1f1f1;color:#444;margin:0 auto;padding:1em 2em;width:50%;}
 body div#start div#footer{margin:3em auto 1em;text-align:center;}
 body div#start div#footer p{background:#ffd;color:#666;display:inline;padding:0.2em 0.5em;}
 body div#start div#footer div{margin:2em 0 4em 0;}
